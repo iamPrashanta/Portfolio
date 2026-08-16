@@ -1,0 +1,137 @@
+import { Service } from "@/types/service";
+
+export const services: Service[] = [
+  {
+    id: "backend-development",
+    slug: "backend-development",
+    title: "Backend Development",
+    shortDescription: "Secure, scalable backend systems, APIs, and data layers.",
+    description:
+      "Design and build secure, scalable backend systems, REST/GraphQL APIs, integrations, and robust data layers for web applications and SaaS products. Focusing on high availability and performance.",
+    icon: "/icons/service-backend.svg", // Using the SVG copied earlier
+    features: [
+      "REST API development",
+      "Authentication & authorization",
+      "Payment & third-party integrations",
+      "Database design & schema",
+      "Background jobs & workers",
+      "Caching (Redis, Memcached)",
+      "Performance optimization",
+      "Microservices architecture",
+    ],
+  },
+  {
+    id: "full-stack-development",
+    slug: "full-stack-development",
+    title: "Full Stack Development",
+    shortDescription: "End-to-end web application development and architecture.",
+    description:
+      "End-to-end product development transforming business requirements into fully functional, scalable web applications. Leveraging modern frameworks like Next.js, React, and robust backend technologies.",
+    icon: "/icons/service-frontend.svg",
+    features: [
+      "Next.js / React ecosystems",
+      "Tailwind CSS / UI Systems",
+      "Server-Side Rendering (SSR)",
+      "State Management",
+      "Real-time WebSockets",
+      "Progressive Web Apps (PWA)",
+      "End-to-End Testing",
+      "Cross-platform support",
+    ],
+  },
+  {
+    id: "api-integration",
+    slug: "api-integration",
+    title: "API & Systems Integration",
+    shortDescription: "Connecting platforms and architecting robust API ecosystems.",
+    description:
+      "Seamlessly connect disparate systems, SaaS platforms, and enterprise tools. Specializing in secure banking APIs, payment gateways, CRM integrations, and custom middleware solutions.",
+    icon: "/icons/service-integration.svg",
+    features: [
+      "Payment gateways (Stripe, etc.)",
+      "Banking & FinTech APIs",
+      "Webhooks & event-driven sync",
+      "CRM integrations (Salesforce, Hubspot)",
+      "Custom middleware development",
+      "OAuth & Single Sign-On (SSO)",
+      "API rate limiting & quotas",
+      "Legacy system bridges",
+    ],
+  },
+  {
+    id: "cloud-devops",
+    slug: "cloud-devops",
+    title: "Cloud & DevOps",
+    shortDescription: "Automated deployments and resilient cloud infrastructure.",
+    description:
+      "Architect and manage resilient, scalable cloud infrastructure. Automate deployment pipelines, containerize applications, and ensure smooth, zero-downtime operations across multiple environments.",
+    icon: "/icons/service-automation.svg",
+    features: [
+      "AWS infrastructure setup",
+      "Dockerized applications",
+      "CI/CD pipelines (GitHub Actions)",
+      "Deployment automation",
+      "Server monitoring & alerting",
+      "Environment management",
+      "Kubernetes orchestration",
+      "Infrastructure as Code (Terraform)",
+    ],
+  },
+  {
+    id: "database-optimization",
+    slug: "database-optimization",
+    title: "Database Architecture",
+    shortDescription: "High-performance data modeling and database tuning.",
+    description:
+      "Design efficient data models and optimize existing databases to handle millions of rows. Implementing proper indexing, caching strategies, and query tuning for maximum performance.",
+    icon: "/icons/service-backend.svg",
+    features: [
+      "PostgreSQL / MySQL tuning",
+      "NoSQL database modeling",
+      "Query optimization",
+      "Indexing strategies",
+      "Database migrations",
+      "Data warehousing",
+      "High availability clustering",
+      "Disaster recovery planning",
+    ],
+  },
+  {
+    id: "security-architecture",
+    slug: "security-architecture",
+    title: "Security Architecture",
+    shortDescription: "Secure application architecture and infrastructure protection.",
+    description:
+      "Implement strong security fundamentals across the entire application stack. Protecting sensitive data, establishing access controls, and ensuring compliance with modern security best practices.",
+    icon: "/icons/service-integration.svg",
+    features: [
+      "Secure application architecture",
+      "Authentication workflows",
+      "RBAC / ABAC implementation",
+      "API security & rate limiting",
+      "Input validation & sanitization",
+      "Secure deployment practices",
+      "AES-256 / SSL encryption",
+      "Vulnerability assessment",
+    ],
+  },
+  {
+    id: "ai-automation",
+    slug: "ai-automation",
+    title: "AI & Automation",
+    shortDescription: "LLM integration and intelligent workflow automation.",
+    description:
+      "Integrate Large Language Models (LLMs) and artificial intelligence into existing products. Automate complex workflows, build smart agents, and unlock new capabilities with AI engineering.",
+    icon: "/icons/service-automation.svg",
+    features: [
+      "LLM API integration (OpenAI, Anthropic)",
+      "Retrieval-Augmented Generation (RAG)",
+      "Prompt engineering",
+      "AI agent development",
+      "Workflow automation",
+      "Data extraction pipelines",
+      "Custom fine-tuning",
+      "Vector database setup",
+    ],
+  },
+];

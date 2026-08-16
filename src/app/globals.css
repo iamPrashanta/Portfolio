@@ -1,26 +1,343 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────
+   Design Tokens — Structa Webflow template extraction
+   ───────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --accent: #ff4d2e;
+
+  /* Semantic Theme */
+  --background: #f5f5f0;
+  --foreground: #1a1a1a;
+  
+  --surface: #ffffff;
+  --surface-muted: #ecece8;
+
+  --dark: #0a0a0a;
+  --dark-soft: #171717;
+  --dark-foreground: #f5f5f5;
+
+  --accent-foreground: #0a0a0a;
+
+  --border: rgba(0, 0, 0, 0.12);
+  --border-dark: rgba(255, 255, 255, 0.15);
+
+  --muted: #737373;
+
+  /* Neutral shades (legacy structa mappings if needed) */
+  --neutral-50: #fafafa;
+  --neutral-100: #f7f7f7;
+  --neutral-200: #f2f2f2;
+  --neutral-300: #ededed;
+  --neutral-400: #e6e6e6;
+  --neutral-500: #dedede;
+  --neutral-600: #d9d9d9;
+  --neutral-700: #d1d1d1;
+  --neutral-800: #c2c2c2;
+  --neutral-900: #a6a6a6;
+
+  /* Content widths */
+  --container-width: 1200px;
+  --content-xl: 1138px;
+  --content-lg: 896px;
+  --content-md: 654px;
+  --content-sm: 480px;
+
+  /* Radius */
+  --radius-default: 16px;
+  --radius-button: 50px;
 }
 
-@theme inline {
+/* ─────────────────────────────────────────────────────────
+   Tailwind v4 theme extensions
+   ───────────────────────────────────────────────────────── */
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-dark: var(--dark);
+  --color-dark-soft: var(--dark-soft);
+  --color-dark-foreground: var(--dark-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-dark: var(--border-dark);
+  --color-muted: var(--muted);
+  
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-badge: var(--font-space-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─────────────────────────────────────────────────────────
+   Base styles — Structa global rules
+   ───────────────────────────────────────────────────────── */
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  font-variant-numeric: ordinal;
+  font-feature-settings: "dlig" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+
+h1 {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+}
+
+h3 {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h4 {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h5 {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+h6 {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--foreground);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+img {
+  border-radius: var(--radius-default);
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* ── Focus Styles ──────────────────────────────────────── */
+
+*[tabindex]:focus-visible,
+input[type="file"]:focus-visible {
+  outline: 0.125rem solid #4d65ff;
+  outline-offset: 0.125rem;
+}
+
+/* ── Selection ─────────────────────────────────────────── */
+
+::selection {
+  background-color: var(--accent);
+  color: var(--color-white);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-600);
+  border-radius: 3px;
+}
+
+/* ── Smooth scrolling ──────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Text utilities (from Structa) ─────────────────────── */
+
+.text-style-muted {
+  opacity: 0.6;
+}
+
+.text-style-muted80 {
+  opacity: 0.8;
+}
+
+.text-style-muted60 {
+  opacity: 0.6;
+}
+
+/* ── Text line clamp (from Structa) ────────────────────── */
+
+.text-style-3lines {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text-style-2lines {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Noise overlay effect ──────────────────────────────── */
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+/* ── Divider ───────────────────────────────────────────── */
+
+.divider {
+  background-color: var(--neutral-300);
+  width: 100%;
+  height: 1px;
+}
+
+/* ── Responsive typography ─────────────────────────────── */
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ── Marquee animation ─────────────────────────────────── */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Fade-up animation (replaces Webflow IX2) ──────────── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+/* ── Scanning Line animation ───────────────────────────── */
+
+@keyframes scanLine {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-scan-line {
+  animation: scanLine 3s linear infinite;
 }
