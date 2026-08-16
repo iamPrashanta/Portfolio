@@ -232,7 +232,7 @@ export const privacyPolicy: LegalSection[] = [
       },
       {
         type: "paragraph",
-        content: "**Email:** [Contact Email]"
+        content: "Email: contact@prashanta.dev"
       }
     ]
   }

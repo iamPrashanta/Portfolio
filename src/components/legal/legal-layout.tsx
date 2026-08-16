@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { LegalSection as LegalSectionType } from "@/types/legal";
 import { LegalToc } from "./legal-toc";
 import { LegalSection } from "./legal-section";
+import { Section } from "@/components/ui/section";
 
 interface LegalLayoutProps {
   sections: LegalSectionType[];
@@ -10,7 +11,7 @@ interface LegalLayoutProps {
 
 export function LegalLayout({ sections }: LegalLayoutProps) {
   return (
-    <div className="bg-white py-16 lg:py-24">
+    <Section size="none" className="bg-white py-16 lg:py-24">
       <Container size="xlarge">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 relative items-start">
           
@@ -24,6 +25,6 @@ export function LegalLayout({ sections }: LegalLayoutProps) {
           
         </div>
       </Container>
-    </div>
+    </Section>
   );
 }

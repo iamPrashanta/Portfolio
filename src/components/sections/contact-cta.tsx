@@ -23,7 +23,7 @@ export function ContactCta() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" variant="primary">
+              <Button href="/contact" variant="dark">
                 Get in Touch
               </Button>
               <Button href={`mailto:${siteConfig.email}`} variant="outlineLight">

@@ -6,6 +6,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { skills } from "@/data/skills";
 
+import { Section } from "@/components/ui/section";
+
 export const metadata = {
   title: "Skills",
   description: "Technical skills, languages, and frameworks used by Prashanta Mondal.",
@@ -16,7 +18,7 @@ export default function SkillsPage() {
     <>
       <Navbar />
       <main>
-        <section className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+        <Section size="none" className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Skills"
@@ -27,9 +29,9 @@ export default function SkillsPage() {
               className="max-w-[800px] items-center"
             />
           </Container>
-        </section>
+        </Section>
 
-        <section className="py-[48px] md:py-[64px]">
+        <Section size="none" className="py-[48px] md:py-[64px]">
           <Container size="xlarge">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {skills.map((skillGroup, idx) => (
@@ -49,7 +51,7 @@ export default function SkillsPage() {
               ))}
             </div>
           </Container>
-        </section>
+        </Section>
 
         <ContactCta />
       </main>

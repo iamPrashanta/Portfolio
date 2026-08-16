@@ -4,12 +4,14 @@ import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
+import { Section } from "@/components/ui/section";
+
 export default function NotFound() {
   return (
     <>
       <Navbar />
       <main className="flex-1 flex flex-col justify-center">
-        <section className="pt-[180px] pb-[144px]">
+        <Section size="none" className="pt-[180px] pb-[144px]">
           <Container size="medium" className="text-center flex flex-col items-center animate-fade-up">
             <h1 className="text-[6rem] md:text-[8rem] font-medium leading-none tracking-tighter text-black mb-6">
               404
@@ -22,7 +24,7 @@ export default function NotFound() {
               Return Home
             </Button>
           </Container>
-        </section>
+        </Section>
       </main>
       <Footer />
     </>

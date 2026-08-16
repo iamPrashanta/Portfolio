@@ -5,11 +5,13 @@ import { ProjectCard } from "@/components/cards/project-card";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 
+import { Section } from "@/components/ui/section";
+
 export function FeaturedProjects() {
   const featured = projects.filter((p) => p.featured).slice(0, 4);
 
   return (
-    <section className="py-[96px] md:py-[144px]">
+    <Section size="none" className="py-[96px] md:py-[144px]">
       <Container size="xlarge">
         <SectionHeading
           badge="Featured Work"
@@ -34,6 +36,6 @@ export function FeaturedProjects() {
           <Button href="/projects" variant="outlineDark">View All Projects</Button>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

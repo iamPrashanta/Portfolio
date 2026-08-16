@@ -9,6 +9,8 @@ import { ContactCta } from "@/components/sections/contact-cta";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
 
+import { Section } from "@/components/ui/section";
+
 interface ProjectDetailPageProps {
   params: Promise<{
     slug: string;
@@ -48,7 +50,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+        <Section size="none" className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
           <Container size="large" className="flex flex-col items-start animate-fade-up">
             <SectionHeading
               badge={project.client || "Case Study"}
@@ -81,10 +83,10 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               )}
             </div>
           </Container>
-        </section>
+        </Section>
 
         {/* Hero Image */}
-        <section className="py-[40px]">
+        <Section size="none" className="py-[40px]">
           <Container size="xlarge">
             <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[24px] overflow-hidden bg-neutral-100 animate-fade-up">
               <PrashantaImage 
@@ -97,10 +99,10 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               />
             </div>
           </Container>
-        </section>
+        </Section>
 
         {/* Project Details Content */}
-        <section className="py-[64px] md:py-[96px]">
+        <Section size="none" className="py-[64px] md:py-[96px]">
           <Container size="large">
             <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-16">
               <div className="flex flex-col gap-8 animate-fade-up">
@@ -135,7 +137,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               </div>
             </div>
           </Container>
-        </section>
+        </Section>
 
         <ContactCta />
       </main>

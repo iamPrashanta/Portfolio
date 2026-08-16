@@ -59,15 +59,15 @@ export function Navbar() {
 
   return (
     <header 
-      className="fixed top-4 left-0 right-0 z-50 flex justify-center px-6"
+      className="fixed top-0 md:top-4 left-0 right-0 z-50 flex justify-center px-0 md:px-6"
       onMouseLeave={handleMouseLeave}
     >
       <div className="relative w-full max-w-[1200px]">
         {/* Pill Navbar */}
         <div
           className={cn(
-            "w-full bg-black rounded-[50px] transition-all duration-300",
-            "grid grid-cols-2 md:grid-cols-[auto_1fr_auto] items-center px-[20px] h-[76px]",
+            "w-full bg-black rounded-none md:rounded-[50px] transition-all duration-300",
+            "grid grid-cols-2 md:grid-cols-[auto_1fr_auto] items-center px-[24px] h-[76px]",
             "shadow-[0_16px_36px_rgba(0,0,0,0.2),0_40px_40px_rgba(0,0,0,0.06),inset_0_10px_30px_rgba(255,255,255,0.15)]",
             isScrolled ? "bg-black/90 backdrop-blur-md" : "bg-black",
             // Keep pill on top of mega menu when open

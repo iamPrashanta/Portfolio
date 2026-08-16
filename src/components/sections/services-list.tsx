@@ -20,6 +20,7 @@ export function ServicesList() {
               heading="End-to-End Engineering"
               subtext="Comprehensive technical solutions for businesses, from backend architecture to AI integration."
               className="sticky top-32"
+              inverse={true}
             />
           </div>
           

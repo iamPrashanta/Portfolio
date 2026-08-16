@@ -8,6 +8,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { services } from "@/data/services";
 
+import { Section } from "@/components/ui/section";
+
 interface ServiceDetailPageProps {
   params: Promise<{
     slug: string;
@@ -48,7 +50,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden bg-black text-white">
+        <Section size="none" className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden bg-black text-white">
           <Container size="large" className="flex flex-col items-start animate-fade-up">
             <div className="w-16 h-16 rounded-2xl border border-white/20 flex items-center justify-center mb-8">
               <Image src={service.icon} alt="" width={32} height={32} className="w-8 h-8 invert opacity-80 rounded-none" />
@@ -59,12 +61,13 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               subtext={service.description}
               headingAs="h1"
               className="max-w-[800px]"
+              inverse={true}
             />
           </Container>
-        </section>
+        </Section>
 
         {/* Features Section */}
-        <section className="py-[96px] md:py-[144px]">
+        <Section size="none" className="py-[96px] md:py-[144px]">
           <Container size="large">
             <SectionHeading
               badge="Capabilities"
@@ -83,7 +86,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               ))}
             </div>
           </Container>
-        </section>
+        </Section>
 
         <ContactCta />
       </main>

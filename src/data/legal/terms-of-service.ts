@@ -276,7 +276,7 @@ export const termsOfService: LegalSection[] = [
       },
       {
         type: "paragraph",
-        content: "**Email:** [Contact Email]"
+        content: "Email: contact@prashanta.dev"
       }
     ]
   }
