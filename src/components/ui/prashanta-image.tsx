@@ -44,6 +44,7 @@ export function PrashantaImage({
       {...props}
       src={src}
       alt={alt}
+      sizes={props.fill && !props.sizes ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : props.sizes}
       className={className}
       onError={() => setHasError(true)}
     />

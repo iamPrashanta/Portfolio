@@ -81,13 +81,13 @@ export function Footer() {
           
           <div className="flex items-center gap-4">
             <Link href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={24} height={24} className="rounded-none" />
+              <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={24} height={24} className="rounded-none" style={{ width: "auto", height: "auto" }} />
             </Link>
             <Link href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <Image src="/icons/github.svg" alt="GitHub" width={24} height={24} className="rounded-none" />
+              <Image src="/icons/github.svg" alt="GitHub" width={24} height={24} className="rounded-none" style={{ width: "auto", height: "auto" }} />
             </Link>
             <Link href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="rounded-none" />
+              <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="rounded-none" style={{ width: "auto", height: "auto" }} />
             </Link>
           </div>
         </div>
