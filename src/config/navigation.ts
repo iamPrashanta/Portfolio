@@ -73,7 +73,7 @@ export const navigation: NavigationEntry[] = [
       description: "AI & Backend Engineering.",
       href: "/projects",
       ctaText: "View Selected Work →",
-      image: "/images/projects/project1.png" // Placeholder, fallback will handle missing
+      image: "/images/nav/explore-featured.jpg"
     }
   },
   {
@@ -101,7 +101,8 @@ export const navigation: NavigationEntry[] = [
       title: "Latest Insight",
       description: "Read the latest engineering articles and thoughts.",
       href: "/insights",
-      ctaText: "Read Articles →"
+      ctaText: "Read Articles →",
+      image: "/images/nav/insights-featured.jpg"
     }
   },
   {
@@ -129,7 +130,8 @@ export const navigation: NavigationEntry[] = [
       title: "The Engineering Lab",
       description: "Explore experiments, internal tools, and competitive programming.",
       href: "/engineering",
-      ctaText: "Enter the Lab →"
+      ctaText: "Enter the Lab →",
+      image: "/images/nav/lab-featured.jpg"
     }
   },
   {

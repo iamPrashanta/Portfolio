@@ -1,5 +1,7 @@
 import * as React from "react";
 import { LegalSection as LegalSectionType, LegalContentBlock } from "@/types/legal";
+import { siteConfig } from "@/config/site";
+import { ObfuscatedEmail } from "@/components/ui/obfuscated-email";
 
 interface LegalSectionProps {
   section: LegalSectionType;
@@ -40,6 +42,15 @@ function renderBlock(block: LegalContentBlock, index: number) {
       return (
         <div key={index} className="border-l-4 border-black pl-4 py-1 mb-6">
           <p className="text-neutral-600 text-[1rem] italic leading-[1.6] m-0">{block.content}</p>
+        </div>
+      );
+      
+      case "emails_list":
+      return (
+        <div key={index} className="flex flex-col sm:flex-row gap-6 mt-4 mb-6">
+          {siteConfig.emails.map((email) => (
+            <ObfuscatedEmail key={email} email={email} />
+          ))}
         </div>
       );
       

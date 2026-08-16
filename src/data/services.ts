@@ -8,7 +8,7 @@ export const services: Service[] = [
     shortDescription: "Secure, scalable backend systems, APIs, and data layers.",
     description:
       "Design and build secure, scalable backend systems, REST/GraphQL APIs, integrations, and robust data layers for web applications and SaaS products. Focusing on high availability and performance.",
-    icon: "/icons/service-backend.svg", // Using the SVG copied earlier
+    icon: "/icons/services/backend-development.svg",
     features: [
       "REST API development",
       "Authentication & authorization",
@@ -27,7 +27,7 @@ export const services: Service[] = [
     shortDescription: "End-to-end web application development and architecture.",
     description:
       "End-to-end product development transforming business requirements into fully functional, scalable web applications. Leveraging modern frameworks like Next.js, React, and robust backend technologies.",
-    icon: "/icons/service-frontend.svg",
+    icon: "/icons/services/full-stack-development.svg",
     features: [
       "Next.js / React ecosystems",
       "Tailwind CSS / UI Systems",
@@ -46,7 +46,7 @@ export const services: Service[] = [
     shortDescription: "Connecting platforms and architecting robust API ecosystems.",
     description:
       "Seamlessly connect disparate systems, SaaS platforms, and enterprise tools. Specializing in secure banking APIs, payment gateways, CRM integrations, and custom middleware solutions.",
-    icon: "/icons/service-integration.svg",
+    icon: "/icons/services/api-integration.svg",
     features: [
       "Payment gateways (Stripe, etc.)",
       "Banking & FinTech APIs",
@@ -65,7 +65,7 @@ export const services: Service[] = [
     shortDescription: "Automated deployments and resilient cloud infrastructure.",
     description:
       "Architect and manage resilient, scalable cloud infrastructure. Automate deployment pipelines, containerize applications, and ensure smooth, zero-downtime operations across multiple environments.",
-    icon: "/icons/service-automation.svg",
+    icon: "/icons/services/cloud-devops.svg",
     features: [
       "AWS infrastructure setup",
       "Dockerized applications",
@@ -84,7 +84,7 @@ export const services: Service[] = [
     shortDescription: "High-performance data modeling and database tuning.",
     description:
       "Design efficient data models and optimize existing databases to handle millions of rows. Implementing proper indexing, caching strategies, and query tuning for maximum performance.",
-    icon: "/icons/service-backend.svg",
+    icon: "/icons/services/database-optimization.svg",
     features: [
       "PostgreSQL / MySQL tuning",
       "NoSQL database modeling",
@@ -103,7 +103,7 @@ export const services: Service[] = [
     shortDescription: "Secure application architecture and infrastructure protection.",
     description:
       "Implement strong security fundamentals across the entire application stack. Protecting sensitive data, establishing access controls, and ensuring compliance with modern security best practices.",
-    icon: "/icons/service-integration.svg",
+    icon: "/icons/services/security-architecture.svg",
     features: [
       "Secure application architecture",
       "Authentication workflows",
@@ -122,7 +122,7 @@ export const services: Service[] = [
     shortDescription: "LLM integration and intelligent workflow automation.",
     description:
       "Integrate Large Language Models (LLMs) and artificial intelligence into existing products. Automate complex workflows, build smart agents, and unlock new capabilities with AI engineering.",
-    icon: "/icons/service-automation.svg",
+    icon: "/icons/services/ai-automation.svg",
     features: [
       "LLM API integration (OpenAI, Anthropic)",
       "Retrieval-Augmented Generation (RAG)",
@@ -141,7 +141,7 @@ export const services: Service[] = [
     shortDescription: "Architect and build scalable, multi-tenant SaaS applications.",
     description:
       "End-to-end development of Software-as-a-Service (SaaS) products. From multi-tenant architecture and subscription billing to scalable infrastructure and responsive interfaces.",
-    icon: "/icons/service-frontend.svg",
+    icon: "/icons/services/saas-product-development.svg",
     features: [
       "Multi-tenant architecture",
       "Subscription billing (Stripe)",
@@ -160,7 +160,7 @@ export const services: Service[] = [
     shortDescription: "Robust data pipelines, processing, and warehouse solutions.",
     description:
       "Design and implement reliable ETL/ELT pipelines to extract, transform, and load data from various sources into centralized warehouses. Ensuring data quality, performance, and accessibility.",
-    icon: "/icons/service-backend.svg",
+    icon: "/icons/services/data-engineering.svg",
     features: [
       "Data pipeline automation",
       "ETL/ELT process design",
@@ -179,7 +179,7 @@ export const services: Service[] = [
     shortDescription: "Transition legacy systems to modern, scalable cloud infrastructure.",
     description:
       "Safely migrate legacy applications and on-premise databases to modern cloud environments. Refactoring monolithic systems into robust microservices and optimizing cloud operations.",
-    icon: "/icons/service-automation.svg",
+    icon: "/icons/services/cloud-migration.svg",
     features: [
       "Legacy system refactoring",
       "Zero-downtime migration",
@@ -198,7 +198,7 @@ export const services: Service[] = [
     shortDescription: "High-performance digital storefronts and custom commerce solutions.",
     description:
       "Build robust e-commerce platforms using custom solutions or headless architectures. Integrating complex payment workflows, inventory management, and high-conversion user experiences.",
-    icon: "/icons/service-integration.svg",
+    icon: "/icons/services/ecommerce-development.svg",
     features: [
       "Headless commerce architecture",
       "Custom payment integrations",
@@ -217,7 +217,7 @@ export const services: Service[] = [
     shortDescription: "High-performance cross-platform applications for iOS, Android, and Desktop.",
     description:
       "Design and build native-quality applications for iOS, Android, Windows, and macOS from a single codebase. Delivering high-performance, seamless user experiences across all devices and form factors.",
-    icon: "/icons/service-frontend.svg",
+    icon: "/icons/services/cross-platform-apps.svg",
     features: [
       "iOS & Android development",
       "Windows & macOS desktop apps",

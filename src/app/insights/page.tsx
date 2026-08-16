@@ -18,7 +18,7 @@ export default function InsightsPage() {
     <>
       <Navbar />
       <main className="pt-header">
-        <Section size="lg" className="overflow-hidden !pb-0">
+        <Section size="lg" className="overflow-hidden">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Insights"

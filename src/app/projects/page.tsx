@@ -19,7 +19,7 @@ export default function ProjectsPage() {
       <Navbar />
       <main className="pt-header">
         {/* Hero Section */}
-        <Section size="lg" className="overflow-hidden !pb-0">
+        <Section size="lg" className="overflow-hidden">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Projects"

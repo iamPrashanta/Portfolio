@@ -53,7 +53,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         <Section size="lg" className="overflow-hidden">
           <Container size="large" className="flex flex-col items-start animate-fade-up">
             <div className="w-16 h-16 rounded-2xl border border-white/20 flex items-center justify-center mb-8">
-              <Image src={service.icon} alt="" width={32} height={32} className="w-8 h-8 invert opacity-80 rounded-none" />
+              <Image src={service.icon} alt="" width={32} height={32} className="w-8 h-8 opacity-80 rounded-none" />
             </div>
             <SectionHeading
               badge="Service Details"

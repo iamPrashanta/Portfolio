@@ -1,4 +1,4 @@
-export type LegalBlockType = "paragraph" | "list_bullet" | "list_number" | "callout" | "note";
+export type LegalBlockType = "paragraph" | "list_bullet" | "list_number" | "callout" | "note" | "emails_list";
 
 export interface LegalContentBlock {
   type: LegalBlockType;
