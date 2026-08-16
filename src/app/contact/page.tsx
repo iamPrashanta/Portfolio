@@ -115,15 +115,15 @@ export default function ContactPage() {
                   </h4>
                   <div className="flex flex-col gap-3">
                     <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                      <Image src="/icons/github.svg" alt="" width={20} height={20} className="opacity-60" />
+                      <Image src="/icons/github.svg" alt="" width={20} height={20} className="opacity-60 rounded-none" />
                       GitHub
                     </a>
                     <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                      <Image src="/icons/linkedin.svg" alt="" width={20} height={20} className="opacity-60" />
+                      <Image src="/icons/linkedin.svg" alt="" width={20} height={20} className="opacity-60 rounded-none" />
                       LinkedIn
                     </a>
                     <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                      <Image src="/icons/whatsapp.svg" alt="" width={20} height={20} className="opacity-60" />
+                      <Image src="/icons/whatsapp.svg" alt="" width={20} height={20} className="opacity-60 rounded-none" />
                       WhatsApp
                     </a>
                   </div>

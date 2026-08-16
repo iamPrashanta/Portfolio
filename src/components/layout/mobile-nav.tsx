@@ -28,7 +28,7 @@ export function MobileNav() {
         className="p-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md transition-opacity hover:opacity-70"
         aria-label="Toggle menu"
       >
-        <Image src="/icons/hamburger.svg" alt="Menu" width={24} height={24} className="h-6 w-6" />
+        <Image src="/icons/hamburger.svg" alt="Menu" width={24} height={24} className="h-6 w-6 rounded-none" />
       </button>
 
       {/* Slide-over menu */}

@@ -38,7 +38,7 @@ export function ContactCta() {
             alt=""
             width={120}
             height={120}
-            className="absolute top-10 right-10 opacity-20 pointer-events-none"
+            className="absolute top-10 right-10 opacity-20 pointer-events-none rounded-none"
           />
         </div>
       </Container>
