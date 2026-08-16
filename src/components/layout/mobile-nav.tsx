@@ -38,22 +38,31 @@ export function MobileNav() {
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <nav className="flex flex-col space-y-6">
+        <nav className="flex flex-col space-y-8">
           {navigation.map((item, idx) => {
             if (isNavGroup(item)) {
               return (
-                <div key={idx} className="flex flex-col space-y-3">
-                  <div className="text-white/60 uppercase tracking-wider text-xs font-badge">{item.title}</div>
-                  <div className="flex flex-col space-y-4 pl-4 border-l border-white/10">
-                    {item.items.map((subitem, subidx) => (
-                      <Link
-                        key={subidx}
-                        href={subitem.href}
-                        onClick={() => setIsOpen(false)}
-                        className="text-white text-lg font-medium"
-                      >
-                        {subitem.title}
-                      </Link>
+                <div key={idx} className="flex flex-col space-y-4">
+                  <div className="text-white text-xl font-medium">{item.title}</div>
+                  <div className="flex flex-col space-y-6 pl-4 border-l border-white/10 mt-2">
+                    {item.columns.map((column, colIdx) => (
+                      <div key={colIdx} className="flex flex-col space-y-3">
+                        <span className="text-[12px] uppercase tracking-wider text-white/50 font-badge">
+                          {column.title}
+                        </span>
+                        <div className="flex flex-col space-y-3">
+                          {column.items.map((subitem, subidx) => (
+                            <Link
+                              key={subidx}
+                              href={subitem.href}
+                              onClick={() => setIsOpen(false)}
+                              className="text-white/80 text-[1rem] font-medium"
+                            >
+                              {subitem.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>

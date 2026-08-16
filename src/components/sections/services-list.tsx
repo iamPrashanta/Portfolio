@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ServiceCard } from "@/components/cards/service-card";
@@ -10,7 +11,7 @@ export function ServicesList() {
   const [openIndex, setOpenIndex] = React.useState<number>(0);
 
   return (
-    <section className="bg-black py-[96px] md:py-[144px]">
+    <Section size="lg" className="bg-black">
       <Container size="xlarge">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24">
           <div className="text-white">
@@ -36,6 +37,6 @@ export function ServicesList() {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

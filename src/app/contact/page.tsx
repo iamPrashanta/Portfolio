@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,7 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main>
-        <section className="pt-[140px] pb-[96px] md:pt-[180px] md:pb-[144px] overflow-hidden">
+        <Section size="lg" className="overflow-hidden mt-[80px]">
           <Container size="large" className="animate-fade-up">
             <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-16 md:gap-24">
               
@@ -121,9 +122,9 @@ export default function ContactPage() {
                       <Image src="/icons/linkedin.svg" alt="" width={20} height={20} className="opacity-60" />
                       LinkedIn
                     </a>
-                    <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                      <Image src="/icons/twitter.svg" alt="" width={20} height={20} className="opacity-60" />
-                      Twitter / X
+                    <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
+                      <Image src="/icons/whatsapp.svg" alt="" width={20} height={20} className="opacity-60" />
+                      WhatsApp
                     </a>
                   </div>
                 </div>
@@ -131,7 +132,7 @@ export default function ContactPage() {
 
             </div>
           </Container>
-        </section>
+        </Section>
       </main>
       <Footer />
     </>

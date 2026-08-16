@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { ProjectMarquee } from "./project-marquee";
 
 export function Hero() {
   return (
-    <section className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+    <Section size="lg" className="overflow-hidden mt-[80px]">
       <Container size="large" className="text-center flex flex-col items-center">
         <div className="animate-fade-up flex flex-col items-center max-w-[800px]">
           <Badge className="mb-6">Welcome to prashanta.dev</Badge>
@@ -30,6 +31,6 @@ export function Hero() {
       <div className="mt-[60px] md:mt-[100px] animate-fade-up" style={{ animationDelay: "0.2s" }}>
         <ProjectMarquee />
       </div>
-    </section>
+    </Section>
   );
 }

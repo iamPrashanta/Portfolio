@@ -12,8 +12,8 @@ export const siteConfig = {
 
   social: {
     github: "https://github.com/iamPrashanta",
-    linkedin: "https://linkedin.com/in/prashantamondal",
-    twitter: "https://x.com/iamPrashanta",
+    linkedin: "https://linkedin.com/in/iamprashanta",
+    whatsapp: "https://wa.me/+919064381514",
   },
 
   navCta: {

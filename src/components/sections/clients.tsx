@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 
@@ -12,7 +13,7 @@ export function Clients() {
   ];
 
   return (
-    <section className="py-[48px] md:py-[64px]">
+    <Section size="sm">
       <Container size="large">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-10 opacity-0 animate-fade-up">
           <Badge>Trusted By</Badge>
@@ -27,6 +28,6 @@ export function Clients() {
           ))}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

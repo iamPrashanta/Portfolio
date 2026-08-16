@@ -7,10 +7,11 @@ import { cn } from "@/lib/utils";
 interface ProjectCardProps {
   project: Project;
   variant?: "v1" | "v2";
+  inverse?: boolean;
   className?: string;
 }
 
-export function ProjectCard({ project, variant = "v2", className }: ProjectCardProps) {
+export function ProjectCard({ project, variant = "v2", inverse = false, className }: ProjectCardProps) {
   if (variant === "v1") {
     // Marquee style card (smaller, logo overlaid)
     return (
@@ -40,7 +41,7 @@ export function ProjectCard({ project, variant = "v2", className }: ProjectCardP
           </p>
         </div>
         <div className="bg-white rounded-b-[16px] px-6 py-4 flex items-center justify-between border-t border-neutral-100">
-          <h3 className="text-[1rem] font-medium">{project.title}</h3>
+          <h3 className="text-[1rem] font-medium text-neutral-950">{project.title}</h3>
           <div className="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center transition-transform group-hover:bg-black group-hover:text-white">
             <PrashantaImage
               src="/icons/plus-circle.svg"
@@ -77,19 +78,19 @@ export function ProjectCard({ project, variant = "v2", className }: ProjectCardP
         )}
       </div>
       <div className="flex items-center justify-between">
-        <h3 className="text-[1.5rem] font-medium tracking-tight">{project.title}</h3>
-        <div className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center transition-all group-hover:bg-black group-hover:border-black">
+        <h3 className={cn("text-[1.5rem] font-medium tracking-tight", inverse ? "text-white" : "text-neutral-950")}>{project.title}</h3>
+        <div className={cn("w-10 h-10 rounded-full border flex items-center justify-center transition-all group-hover:bg-black group-hover:border-black", inverse ? "border-white/20 hover:bg-white" : "border-neutral-200")}>
           <PrashantaImage
             src="/icons/plus.svg"
             alt=""
             width={16}
             height={16}
-            className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:invert transition-all"
+            className={cn("w-4 h-4 transition-all opacity-50 group-hover:opacity-100", inverse ? "invert group-hover:invert-0" : "group-hover:invert")}
             fallbackLabel="ICON"
           />
         </div>
       </div>
-      <p className="mt-2 text-neutral-900 line-clamp-2">{project.description}</p>
+      <p className={cn("mt-2 line-clamp-2", inverse ? "text-white/80" : "text-neutral-900")}>{project.description}</p>
     </Link>
   );
 }

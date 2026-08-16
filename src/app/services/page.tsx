@@ -2,6 +2,7 @@ import * as React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ServicesList } from "@/components/sections/services-list";
 import { ContactCta } from "@/components/sections/contact-cta";
@@ -18,7 +19,7 @@ export default function ServicesPage() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+        <Section size="lg" className="overflow-hidden mt-[80px] !pb-0">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Services"
@@ -29,13 +30,13 @@ export default function ServicesPage() {
               className="max-w-[800px] items-center"
             />
           </Container>
-        </section>
+        </Section>
 
         {/* Detailed Services Accordion */}
         <ServicesList />
 
         {/* Tech Stack / Skills Section */}
-        <section className="py-[96px] md:py-[144px]">
+        <Section size="lg">
           <Container size="large">
             <SectionHeading
               badge="Tech Stack"
@@ -62,7 +63,7 @@ export default function ServicesPage() {
               ))}
             </div>
           </Container>
-        </section>
+        </Section>
 
         <ContactCta />
       </main>

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ArticleCard } from "@/components/cards/article-card";
 import { ContactCta } from "@/components/sections/contact-cta";
@@ -17,7 +18,7 @@ export default function InsightsPage() {
     <>
       <Navbar />
       <main>
-        <section className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+        <Section size="lg" className="overflow-hidden mt-[80px] !pb-0">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Insights"
@@ -28,9 +29,9 @@ export default function InsightsPage() {
               className="max-w-[800px] items-center"
             />
           </Container>
-        </section>
+        </Section>
 
-        <section className="py-[48px] md:py-[64px]">
+        <Section size="sm">
           <Container size="xlarge">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, idx) => (
@@ -40,7 +41,7 @@ export default function InsightsPage() {
               ))}
             </div>
           </Container>
-        </section>
+        </Section>
 
         <ContactCta />
       </main>

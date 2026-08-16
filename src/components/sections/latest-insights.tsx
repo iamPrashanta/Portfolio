@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ArticleCard } from "@/components/cards/article-card";
@@ -9,7 +10,7 @@ export function LatestInsights() {
   const latest = articles.slice(0, 3);
 
   return (
-    <section className="py-[96px] md:py-[144px] bg-neutral-50">
+    <Section size="lg" className="bg-neutral-50">
       <Container size="xlarge">
         <SectionHeading
           badge="Latest Insights"
@@ -33,6 +34,6 @@ export function LatestInsights() {
           <Button href="/insights" variant="outlineDark">View All Insights</Button>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

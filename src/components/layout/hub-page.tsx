@@ -2,6 +2,7 @@ import * as React from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +16,7 @@ export function DeveloperHubPage({ title, description }: HubPageProps) {
     <>
       <Navbar />
       <main className="flex-1 flex flex-col justify-center">
-        <section className="pt-[180px] pb-[144px]">
+        <Section size="lg" className="mt-[80px]">
           <Container size="medium" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Developer Hub"
@@ -34,7 +35,7 @@ export function DeveloperHubPage({ title, description }: HubPageProps) {
               Return Home
             </Button>
           </Container>
-        </section>
+        </Section>
       </main>
       <Footer />
     </>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { PrashantaImage } from "@/components/ui/prashanta-image";
@@ -7,13 +8,13 @@ import { profile } from "@/data/profile";
 
 export function AboutPreview() {
   return (
-    <section className="py-[96px] md:py-[144px]">
+    <Section size="lg">
       <Container size="xlarge">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="relative aspect-[4/5] rounded-[16px] overflow-hidden w-full max-w-[500px] mx-auto lg:mx-0 opacity-0 animate-fade-up">
             {/* The Structa template uses a video here, but we can use an image or video */}
             <PrashantaImage 
-              src="/images/team/person7.avif" 
+              src="/images/me/me2.png" 
               alt="Prashanta" 
               fill 
               className="object-cover" 
@@ -43,6 +44,6 @@ export function AboutPreview() {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

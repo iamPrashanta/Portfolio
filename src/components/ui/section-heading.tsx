@@ -8,6 +8,7 @@ interface SectionHeadingProps extends React.HTMLAttributes<HTMLDivElement> {
   subtext?: React.ReactNode;
   align?: "left" | "center" | "right";
   headingAs?: "h1" | "h2" | "h3";
+  inverse?: boolean;
 }
 
 export function SectionHeading({
@@ -16,6 +17,7 @@ export function SectionHeading({
   subtext,
   align = "left",
   headingAs: HeadingAs = "h2",
+  inverse = false,
   className,
   ...props
 }: SectionHeadingProps) {
@@ -27,14 +29,14 @@ export function SectionHeading({
 
   return (
     <div className={cn("flex flex-col max-w-3xl", alignClasses[align], className)} {...props}>
-      <Badge className="mb-6">{badge}</Badge>
+      <Badge className={cn("mb-6", inverse && "bg-white/10 text-white border-white/20")}>{badge}</Badge>
       
       {heading && (
-        <HeadingAs className="mb-6">{heading}</HeadingAs>
+        <HeadingAs className={cn("mb-6", inverse && "text-white")}>{heading}</HeadingAs>
       )}
       
       {subtext && (
-        <div className="text-[1rem] text-neutral-900 md:max-w-[80%]">
+        <div className={cn("text-[1rem] md:max-w-[80%]", inverse ? "text-white/80" : "text-neutral-900")}>
           {subtext}
         </div>
       )}

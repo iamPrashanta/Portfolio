@@ -79,8 +79,8 @@ export function Footer() {
           </p>
           
           <div className="flex items-center gap-4">
-            <Link href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-              <Image src="/icons/twitter.svg" alt="Twitter" width={24} height={24} />
+            <Link href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+              <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={24} height={24} />
             </Link>
             <Link href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
               <Image src="/icons/github.svg" alt="GitHub" width={24} height={24} />

@@ -2,8 +2,6 @@
 // Navigation Configuration — prashanta.dev
 // ─────────────────────────────────────────────────────────
 // Single source of truth for all navigation links.
-// The navbar, mobile nav, footer, and future command palette
-// all read from this configuration.
 
 export interface NavItem {
   title: string;
@@ -11,108 +9,138 @@ export interface NavItem {
   description?: string;
 }
 
-export interface NavGroup {
+export interface NavColumn {
   title: string;
   items: NavItem[];
 }
 
-export type NavigationEntry = NavItem | NavGroup;
+export interface NavFeaturedItem {
+  title: string;
+  description: string;
+  href: string;
+  image?: string;
+  ctaText?: string;
+}
 
-function isNavGroup(entry: NavigationEntry): entry is NavGroup {
-  return "items" in entry;
+export interface NavMegaMenu {
+  title: string;
+  type: "mega-menu";
+  columns: NavColumn[];
+  featured?: NavFeaturedItem;
+}
+
+export interface NavLink {
+  title: string;
+  href: string;
+}
+
+export type NavigationEntry = NavLink | NavMegaMenu;
+
+export function isNavMegaMenu(entry: NavigationEntry): entry is NavMegaMenu {
+  return "type" in entry && entry.type === "mega-menu";
 }
 
 // ── Primary Navigation ──────────────────────────────────
 
 export const navigation: NavigationEntry[] = [
   {
+    title: "Overview",
+    href: "/",
+  },
+  {
+    title: "Explore",
+    type: "mega-menu",
+    columns: [
+      {
+        title: "PORTFOLIO",
+        items: [
+          { title: "Projects", href: "/projects", description: "Selected engineering work" },
+          { title: "Case Studies", href: "/case-studies", description: "Technical decision breakdowns" },
+          { title: "Skills", href: "/skills", description: "Technical stack by domain" },
+          { title: "Resume", href: "/resume", description: "Experience and background" },
+        ],
+      },
+      {
+        title: "COMPANY",
+        items: [
+          { title: "Clients", href: "/clients", description: "Organizations I've worked with" },
+          { title: "Services", href: "/services", description: "Consulting & engineering services" },
+        ],
+      },
+    ],
+    featured: {
+      title: "Building systems that scale.",
+      description: "AI & Backend Engineering.",
+      href: "/projects",
+      ctaText: "View Selected Work →",
+      image: "/images/projects/project1.png" // Placeholder, fallback will handle missing
+    }
+  },
+  {
+    title: "Insights",
+    type: "mega-menu",
+    columns: [
+      {
+        title: "TOPICS",
+        items: [
+          { title: "Backend Architecture", href: "/insights?category=backend" },
+          { title: "System Design", href: "/insights?category=system-design" },
+          { title: "Security", href: "/insights?category=security" },
+          { title: "AI / LLM", href: "/insights?category=ai" },
+        ],
+      },
+      {
+        title: "EXPLORE",
+        items: [
+          { title: "All Insights", href: "/insights", description: "Engineering articles and writing" },
+          { title: "Engineering Notes", href: "/engineering", description: "Raw engineering thoughts" },
+        ],
+      },
+    ],
+    featured: {
+      title: "Latest Insight",
+      description: "Read the latest engineering articles and thoughts.",
+      href: "/insights",
+      ctaText: "Read Articles →"
+    }
+  },
+  {
+    title: "Lab",
+    type: "mega-menu",
+    columns: [
+      {
+        title: "ENGINEERING",
+        items: [
+          { title: "Engineering Hub", href: "/engineering", description: "System design & patterns" },
+          { title: "Tools", href: "/tools", description: "Developer utilities" },
+          { title: "MCP", href: "/mcp", description: "Model Context Protocol" },
+        ],
+      },
+      {
+        title: "COMPUTER SCIENCE",
+        items: [
+          { title: "DSA", href: "/dsa", description: "Data Structures & Algorithms" },
+          { title: "CP", href: "/cp", description: "Competitive Programming" },
+          { title: "Experiments", href: "/lab/experiments", description: "Technical prototypes" },
+        ],
+      },
+    ],
+    featured: {
+      title: "The Engineering Lab",
+      description: "Explore experiments, internal tools, and competitive programming.",
+      href: "/engineering",
+      ctaText: "Enter the Lab →"
+    }
+  },
+  {
     title: "About",
     href: "/about",
   },
-
-  {
-    title: "Services",
-    href: "/services",
-  },
-
-  {
-    title: "Work",
-    items: [
-      {
-        title: "Projects",
-        href: "/projects",
-        description: "Production and open source engineering work",
-      },
-      {
-        title: "Case Studies",
-        href: "/case-studies",
-        description: "In-depth engineering decision breakdowns",
-      },
-      {
-        title: "Skills",
-        href: "/skills",
-        description: "Technical skills organized by domain",
-      },
-    ],
-  },
-
-  {
-    title: "Insights",
-    items: [
-      {
-        title: "Articles",
-        href: "/insights",
-        description: "Engineering articles and technical writing",
-      },
-      {
-        title: "Engineering",
-        href: "/engineering",
-        description: "System design, backend, DevOps, security",
-      },
-    ],
-  },
-
-  {
-    title: "Lab",
-    items: [
-      {
-        title: "Experiments",
-        href: "/lab/experiments",
-        description: "Technical experiments and prototypes",
-      },
-      {
-        title: "Architecture",
-        href: "/lab/architecture",
-        description: "System architecture explorations",
-      },
-      {
-        title: "Tools",
-        href: "/tools",
-        description: "Developer tools and utilities",
-      },
-      {
-        title: "MCP",
-        href: "/mcp",
-        description: "Model Context Protocol ecosystem",
-      },
-      {
-        title: "DSA",
-        href: "/dsa",
-        description: "Data Structures & Algorithms",
-      },
-      {
-        title: "CP",
-        href: "/cp",
-        description: "Competitive Programming",
-      },
-    ],
-  },
-
   {
     title: "Connect",
     href: "/connect",
   },
-] as const;
+];
 
 // ── Footer Navigation ───────────────────────────────────
 
@@ -158,4 +186,4 @@ export const footerNavigation = {
   },
 } as const;
 
-export { isNavGroup };
+export { isNavMegaMenu as isNavGroup }; // Aliased temporarily to prevent build breaks elsewhere

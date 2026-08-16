@@ -1,12 +1,13 @@
 import * as React from "react";
 import Image from "next/image";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export function ContactCta() {
   return (
-    <section className="py-[96px] md:py-[144px]">
+    <Section size="lg">
       <Container size="xlarge">
         <div className="relative rounded-[24px] overflow-hidden bg-accent text-white py-[80px] md:py-[120px] px-[32px] md:px-[64px] flex flex-col items-center text-center">
           {/* Subtle noise pattern overlay */}
@@ -41,6 +42,6 @@ export function ContactCta() {
           />
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

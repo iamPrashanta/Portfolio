@@ -28,18 +28,6 @@
 
   --muted: #737373;
 
-  /* Neutral shades (legacy structa mappings if needed) */
-  --neutral-50: #fafafa;
-  --neutral-100: #f7f7f7;
-  --neutral-200: #f2f2f2;
-  --neutral-300: #ededed;
-  --neutral-400: #e6e6e6;
-  --neutral-500: #dedede;
-  --neutral-600: #d9d9d9;
-  --neutral-700: #d1d1d1;
-  --neutral-800: #c2c2c2;
-  --neutral-900: #a6a6a6;
-
   /* Content widths */
   --container-width: 1200px;
   --content-xl: 1138px;
@@ -47,9 +35,43 @@
   --content-md: 654px;
   --content-sm: 480px;
 
+  /* Global Page Edge Safety */
+  --page-padding: 1.25rem; /* 20px on mobile */
+
+  /* Section Vertical Rhythm */
+  --section-padding-lg: 4rem; /* 64px on mobile */
+  --section-padding-md: 3rem; /* 48px on mobile */
+  --section-padding-sm: 2rem; /* 32px on mobile */
+
+  /* Structural Gaps */
+  --layout-gap-lg: 2rem; /* 32px on mobile */
+  --layout-gap-md: 1.5rem; /* 24px on mobile */
+  --layout-gap-sm: 1rem; /* 16px on mobile */
+
   /* Radius */
   --radius-default: 16px;
   --radius-button: 50px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-padding: 1.5rem; /* 24px on tablet/desktop */
+
+    --section-padding-lg: 6rem; /* 96px on tablet */
+    --section-padding-md: 4rem; /* 64px on tablet */
+    --section-padding-sm: 2rem; /* 32px on tablet */
+    
+    --layout-gap-lg: 3rem; /* 48px on tablet */
+    --layout-gap-md: 2rem; /* 32px on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-padding-lg: 9rem; /* 144px on desktop */
+    --section-padding-md: 6rem; /* 96px on desktop */
+    --section-padding-sm: 3rem; /* 48px on desktop */
+  }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -70,104 +92,104 @@
   --color-border-dark: var(--border-dark);
   --color-muted: var(--muted);
   
-  --color-neutral-50: var(--neutral-50);
-  --color-neutral-100: var(--neutral-100);
-  --color-neutral-200: var(--neutral-200);
-  --color-neutral-300: var(--neutral-300);
-  --color-neutral-400: var(--neutral-400);
-  --color-neutral-500: var(--neutral-500);
-  --color-neutral-600: var(--neutral-600);
-  --color-neutral-700: var(--neutral-700);
-  --color-neutral-800: var(--neutral-800);
-  --color-neutral-900: var(--neutral-900);
-  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-badge: var(--font-space-mono);
+
+  /* Spacing extensions */
+  --spacing-page: var(--page-padding);
+  --spacing-section-lg: var(--section-padding-lg);
+  --spacing-section-md: var(--section-padding-md);
+  --spacing-section-sm: var(--section-padding-sm);
+  --spacing-layout-lg: var(--layout-gap-lg);
+  --spacing-layout-md: var(--layout-gap-md);
+  --spacing-layout-sm: var(--layout-gap-sm);
 }
 
 /* ─────────────────────────────────────────────────────────
    Base styles — Structa global rules
    ───────────────────────────────────────────────────────── */
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
-  font-variant-numeric: ordinal;
-  font-feature-settings: "dlig" on;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  line-height: 1.5;
-}
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), sans-serif;
+    font-variant-numeric: ordinal;
+    font-feature-settings: "dlig" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 
-/* ── Typography ────────────────────────────────────────── */
+  /* ── Typography ────────────────────────────────────────── */
 
-h1 {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 3.5rem;
-  font-weight: 400;
-  line-height: 1.1;
-  margin: 0;
-}
+  h1 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+  }
 
-h2 {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 1.15;
-  margin: 0;
-}
+  h2 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
+  }
 
-h3 {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0;
-}
+  h3 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+  }
 
-h4 {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 1.2;
-  margin: 0;
-}
+  h4 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+  }
 
-h5 {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.3;
-  margin: 0;
-}
+  h5 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0;
+  }
 
-h6 {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.3;
-  margin: 0;
-}
+  h6 {
+    font-family: var(--font-geist-sans), sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0;
+  }
 
-p {
-  margin: 0;
-}
+  p {
+    margin: 0;
+  }
 
-a {
-  color: var(--foreground);
-  font-weight: 500;
-  text-decoration: none;
-}
+  a {
+    color: var(--foreground);
+    font-weight: 500;
+    text-decoration: none;
+  }
 
-img {
-  border-radius: var(--radius-default);
-  max-width: 100%;
-  display: inline-block;
+  img {
+    border-radius: var(--radius-default);
+    max-width: 100%;
+    display: inline-block;
+  }
 }
 
 /* ── Focus Styles ──────────────────────────────────────── */
