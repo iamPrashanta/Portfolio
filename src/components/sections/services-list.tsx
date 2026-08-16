@@ -12,7 +12,7 @@ export function ServicesList() {
 
   return (
     <Section size="lg" className="bg-black">
-      <Container size="xlarge">
+      <Container size="default">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24">
           <div className="text-white">
             <SectionHeading

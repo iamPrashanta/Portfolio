@@ -9,7 +9,7 @@ import { profile } from "@/data/profile";
 export function AboutPreview() {
   return (
     <Section size="lg">
-      <Container size="xlarge">
+      <Container size="default">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="relative aspect-[4/5] rounded-[16px] overflow-hidden w-full max-w-[500px] mx-auto lg:mx-0 opacity-0 animate-fade-up">
             {/* The Structa template uses a video here, but we can use an image or video */}

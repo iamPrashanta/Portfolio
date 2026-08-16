@@ -15,8 +15,8 @@ export function DeveloperHubPage({ title, description }: HubPageProps) {
   return (
     <>
       <Navbar />
-      <main className="flex-1 flex flex-col justify-center">
-        <Section size="lg" className="mt-[80px]">
+      <main className="flex-1 flex flex-col justify-center pt-header">
+        <Section size="lg">
           <Container size="medium" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Developer Hub"

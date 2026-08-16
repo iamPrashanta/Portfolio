@@ -17,9 +17,9 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-header">
         {/* Hero Section */}
-        <Section size="lg" className="overflow-hidden mt-[80px] !pb-0">
+        <Section size="lg" className="overflow-hidden !pb-0">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Services"

@@ -48,9 +48,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-header">
         {/* Hero Section */}
-        <Section size="none" className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+        <Section size="lg" className="overflow-hidden">
           <Container size="large" className="flex flex-col items-start animate-fade-up">
             <SectionHeading
               badge={project.client || "Case Study"}
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         {/* Hero Image */}
         <Section size="none" className="py-[40px]">
-          <Container size="xlarge">
+          <Container size="default">
             <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[24px] overflow-hidden bg-neutral-100 animate-fade-up">
               <PrashantaImage 
                 src={project.image} 
@@ -102,7 +102,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </Section>
 
         {/* Project Details Content */}
-        <Section size="none" className="py-[64px] md:py-[96px]">
+        <Section size="md">
           <Container size="large">
             <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-16">
               <div className="flex flex-col gap-8 animate-fade-up">

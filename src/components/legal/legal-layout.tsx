@@ -12,7 +12,7 @@ interface LegalLayoutProps {
 export function LegalLayout({ sections }: LegalLayoutProps) {
   return (
     <Section size="none" className="bg-white py-16 lg:py-24">
-      <Container size="xlarge">
+      <Container size="default">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 relative items-start">
           
           <LegalToc sections={sections} />

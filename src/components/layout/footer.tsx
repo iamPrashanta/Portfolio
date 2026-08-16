@@ -7,17 +7,18 @@ import { Container } from "@/components/ui/container";
 import { Divider } from "@/components/ui/divider";
 import { footerNavigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
+import { Logo } from "@/components/brand/logo";
 
 export function Footer() {
   return (
-    <footer className="pt-[6rem] pb-[2rem] px-[16px] mt-auto">
-      <Container size="xlarge">
+    <footer className="pt-section-md pb-[2rem] px-[16px] mt-auto">
+      <Container size="default">
         {/* Footer Top - Newsletter & Main Nav */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24 mb-16">
           {/* Brand & Newsletter */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="text-2xl font-medium tracking-tight">
-              prashanta<span className="text-accent">.dev</span>
+          <div className="flex flex-col gap-6 items-start">
+            <Link href="/" className="inline-flex">
+              <Logo variant="horizontal" size="lg" />
             </Link>
             <p className="text-muted text-[1rem] max-w-sm">
               Building robust digital systems, backend architectures, and intelligent software products.

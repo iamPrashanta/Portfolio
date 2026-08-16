@@ -50,7 +50,7 @@ export function Metrics() {
 
   return (
     <Section size="sm">
-      <Container size="xlarge" ref={ref}>
+      <Container size="default" ref={ref}>
         <Divider className="mb-12" />
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">

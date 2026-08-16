@@ -17,8 +17,8 @@ export default function InsightsPage() {
   return (
     <>
       <Navbar />
-      <main>
-        <Section size="lg" className="overflow-hidden mt-[80px] !pb-0">
+      <main className="pt-header">
+        <Section size="lg" className="overflow-hidden !pb-0">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Insights"
@@ -32,7 +32,7 @@ export default function InsightsPage() {
         </Section>
 
         <Section size="sm">
-          <Container size="xlarge">
+          <Container size="default">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, idx) => (
                 <div key={article.id} className="animate-fade-up" style={{ animationDelay: `${idx * 0.1}s` }}>

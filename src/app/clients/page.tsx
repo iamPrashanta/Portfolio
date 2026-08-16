@@ -16,7 +16,7 @@ export default function ClientsPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 flex flex-col items-center justify-center min-h-screen pt-[120px] pb-[80px]">
+      <main className="flex-1 flex flex-col items-center justify-center min-h-screen pt-header pb-[80px]">
         <Section size="none" className="w-full flex items-center justify-center">
           <Container size="small" className="flex justify-center">
             <div className="w-full max-w-[480px] bg-white border border-neutral-200 rounded-[24px] p-8 md:p-12 shadow-sm text-center animate-fade-up">

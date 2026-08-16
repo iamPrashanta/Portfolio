@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/brand/logo";
 
 import { Section } from "@/components/ui/section";
 
@@ -10,10 +11,10 @@ export default function NotFound() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 flex flex-col justify-center">
-        <Section size="none" className="pt-[180px] pb-[144px]">
-          <Container size="medium" className="text-center flex flex-col items-center animate-fade-up">
-            <h1 className="text-[6rem] md:text-[8rem] font-medium leading-none tracking-tighter text-black mb-6">
+      <main className="flex-1 flex flex-col pt-header">
+        <Section size="none" className="pb-[144px]">
+          <Container size="default" className="text-center relative">
+            <h1 className="text-display-lg font-medium tracking-tight mb-6 relative z-10 text-black">
               404
             </h1>
             <h2 className="text-[2rem] font-medium mb-6">Page Not Found</h2>

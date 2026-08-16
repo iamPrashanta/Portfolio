@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 flex flex-col pt-[80px]">
+      <main className="flex-1 flex flex-col pt-header">
         <LegalHero 
           title="Terms of Service"
           description="Clear boundaries, independent contractor terms, and professional frameworks for software engineering engagements."

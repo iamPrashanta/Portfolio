@@ -275,8 +275,13 @@ export const termsOfService: LegalSection[] = [
         content: "For any questions regarding these Terms of Service or to discuss a potential engagement, please contact me at:"
       },
       {
-        type: "paragraph",
-        content: "Email: contact@prashanta.dev"
+        type: "list_bullet",
+        items: [
+          {
+            type: "text",
+            content: "Emails: contact@prashanta.dev, prashanta1403@proton.me"
+          }
+        ]
       }
     ]
   }

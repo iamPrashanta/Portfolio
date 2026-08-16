@@ -1,6 +1,5 @@
 import * as React from "react";
 import { LegalSection as LegalSectionType, LegalContentBlock } from "@/types/legal";
-import { cn } from "@/lib/utils";
 
 interface LegalSectionProps {
   section: LegalSectionType;

@@ -7,13 +7,13 @@ import { ServicesList } from "@/components/sections/services-list";
 import { Metrics } from "@/components/sections/metrics";
 import { AboutPreview } from "@/components/sections/about-preview";
 import { LatestInsights } from "@/components/sections/latest-insights";
-import { ContactCta } from "@/components/sections/contact-cta";
+import { HomeContact } from "@/components/sections/home-contact";
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-header">
         <Hero />
         <Clients />
         <FeaturedProjects />
@@ -21,7 +21,7 @@ export default function HomePage() {
         <Metrics />
         <AboutPreview />
         <LatestInsights />
-        <ContactCta />
+        <HomeContact />
       </main>
       <Footer />
     </>

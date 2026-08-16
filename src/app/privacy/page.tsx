@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 flex flex-col pt-[80px]">
+      <main className="flex-1 flex flex-col pt-header">
         <LegalHero 
           title="Privacy Policy"
           description="Transparency, data protection, and clear boundaries for professional engineering engagements."

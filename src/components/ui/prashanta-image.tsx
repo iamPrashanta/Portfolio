@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image, { ImageProps } from "next/image";
 import { ImageFallback } from "./image-fallback";
+import { cn } from "@/lib/utils";
 
 interface PrashantaImageProps extends Omit<ImageProps, "src" | "alt"> {
   src?: string | null;
@@ -32,7 +33,7 @@ export function PrashantaImage({
     }
     
     return (
-      <div className={className}>
+      <div className={cn(className, props.fill && "absolute inset-0 w-full h-full")}>
         <ImageFallback label={fallbackLabel} />
       </div>
     );

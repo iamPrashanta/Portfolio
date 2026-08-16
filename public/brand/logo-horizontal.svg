@@ -1,0 +1,17 @@
+<svg width="240" height="40" viewBox="0 0 240 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <g transform="scale(0.33333333)">
+    <!-- Spine -->
+    <rect x="24" y="24" width="20" height="72" rx="10" />
+    <!-- Branch top -->
+    <rect x="44" y="24" width="36" height="20" rx="10" />
+    <!-- Branch side -->
+    <rect x="76" y="24" width="20" height="48" rx="10" />
+    <!-- Branch middle -->
+    <rect x="44" y="52" width="20" height="20" rx="10" />
+    <!-- Floating node -->
+    <circle cx="86" cy="86" r="10" />
+  </g>
+  <text x="56" y="28" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="600" letter-spacing="-0.02em">
+    prashanta<tspan fill="#ff4d2e">.dev</tspan>
+  </text>
+</svg>

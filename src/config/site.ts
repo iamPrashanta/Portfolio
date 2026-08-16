@@ -6,7 +6,10 @@ export const siteConfig = {
     "I design and build secure, scalable software systems, cloud infrastructure, and intelligent applications for startups, businesses, and SaaS companies.",
   shortDescription:
     "Full Stack Engineer specializing in backend systems, cloud infrastructure, and AI automation.",
-  email: "hello@prashanta.dev",
+  emails: [
+    "contact@prashanta.dev",
+    "prashanta1403@proton.me"
+  ],
   location: "India",
   available: true,
 

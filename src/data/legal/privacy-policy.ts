@@ -231,8 +231,13 @@ export const privacyPolicy: LegalSection[] = [
         content: "If you have any questions about this Privacy Policy or how your information is handled, please contact me at:"
       },
       {
-        type: "paragraph",
-        content: "Email: contact@prashanta.dev"
+        type: "list_bullet",
+        items: [
+          {
+            type: "text",
+            content: "Emails: contact@prashanta.dev, prashanta1403@proton.me"
+          }
+        ]
       }
     ]
   }

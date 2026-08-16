@@ -17,9 +17,9 @@ export default function ProjectsPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-header">
         {/* Hero Section */}
-        <Section size="lg" className="overflow-hidden mt-[80px] !pb-0">
+        <Section size="lg" className="overflow-hidden !pb-0">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Projects"
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
         {/* Projects Grid */}
         <Section size="sm">
-          <Container size="xlarge">
+          <Container size="default">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
               {projects.map((project, idx) => (
                 <div

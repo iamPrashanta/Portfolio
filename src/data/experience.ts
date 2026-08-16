@@ -38,12 +38,12 @@ export const experience: ExperienceEntry[] = [
       "Real-time, WebRTC, spatial analytics, AI/LLM, and automation experiments.",
       "Building independent products and open engineering experiments.",
     ],
-    projects: [
-      { title: "Genlabs Admin", href: "/projects/genlabs" },
-      { title: "Koi Bus", href: "/projects/koibus" },
-      { title: "Astro Observatory", href: "/projects/astro" },
-      { title: "Porbi", href: "/projects/porbi" },
-    ],
+    // projects: [
+    //   { title: "Genlabs Admin", href: "/projects/genlabs" },
+    //   { title: "Koi Bus", href: "/projects/koibus" },
+    //   { title: "Astro Observatory", href: "/projects/astro" },
+    //   { title: "Porbi", href: "/projects/porbi" },
+    // ],
   },
   {
     id: "unpay",

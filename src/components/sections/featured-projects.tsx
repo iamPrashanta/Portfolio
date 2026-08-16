@@ -11,8 +11,8 @@ export function FeaturedProjects() {
   const featured = projects.filter((p) => p.featured).slice(0, 4);
 
   return (
-    <Section size="none" className="py-[96px] md:py-[144px]">
-      <Container size="xlarge">
+    <Section size="lg">
+      <Container size="default">
         <SectionHeading
           badge="Featured Work"
           heading="Selected engineering projects and case studies."

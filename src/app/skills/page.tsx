@@ -17,8 +17,8 @@ export default function SkillsPage() {
   return (
     <>
       <Navbar />
-      <main>
-        <Section size="none" className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden">
+      <main className="pt-header">
+        <Section size="lg" className="overflow-hidden">
           <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
             <SectionHeading
               badge="Skills"
@@ -32,7 +32,7 @@ export default function SkillsPage() {
         </Section>
 
         <Section size="none" className="py-[48px] md:py-[64px]">
-          <Container size="xlarge">
+          <Container size="default">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {skills.map((skillGroup, idx) => (
                 <div key={idx} className="animate-fade-up bg-neutral-50 p-8 rounded-[16px] border border-neutral-200" style={{ animationDelay: `${idx * 0.1}s` }}>

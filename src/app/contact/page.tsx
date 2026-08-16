@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import { ObfuscatedEmail } from "@/components/ui/obfuscated-email";
 
 export const metadata = {
   title: "Contact",
@@ -17,8 +18,8 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main>
-        <Section size="lg" className="overflow-hidden mt-[80px]">
+      <main className="pt-header">
+        <Section size="lg" className="overflow-hidden">
           <Container size="large" className="animate-fade-up">
             <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-16 md:gap-24">
               
@@ -95,9 +96,11 @@ export default function ContactPage() {
                   <h4 className="font-badge uppercase tracking-wider text-[12px] text-muted">
                     Direct Contact
                   </h4>
-                  <a href={`mailto:${siteConfig.email}`} className="text-[1.25rem] font-medium hover:text-accent transition-colors">
-                    {siteConfig.email}
-                  </a>
+                  <div className="flex flex-col gap-3">
+                    {siteConfig.emails.map((email) => (
+                      <ObfuscatedEmail key={email} email={email} />
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="flex flex-col gap-4">

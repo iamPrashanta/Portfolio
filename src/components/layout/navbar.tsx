@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "./mobile-nav";
 import { MegaMenu } from "./mega-menu";
+import { Logo } from "@/components/brand/logo";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -77,10 +78,11 @@ export function Navbar() {
           {/* Brand */}
           <Link 
             href="/" 
-            className="flex items-center pl-1 text-white font-medium text-lg tracking-tight"
+            className="flex items-center pl-1"
             onMouseEnter={() => handleMouseEnter("")} // clear active menu
           >
-            prashanta<span className="text-accent">.dev</span>
+            <Logo variant="horizontal" className="hidden md:flex text-white" />
+            <Logo variant="mark" className="flex md:hidden text-white" />
           </Link>
 
           {/* Desktop Nav Links */}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/brand/logo";
 
 interface ImageFallbackProps {
   label?: string;
@@ -28,7 +29,8 @@ export function ImageFallback({ label = "IMAGE UNAVAILABLE", className }: ImageF
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-2 p-6 text-center">
+      <div className="relative z-10 flex flex-col items-center gap-4 p-6 text-center">
+        <Logo variant="mark" size="md" theme="dark" animated className="text-accent" />
         <span className="text-accent font-medium tracking-widest text-[0.75rem] md:text-[0.875rem]">
           PRASHANTA.DEV
         </span>

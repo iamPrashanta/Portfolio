@@ -22,21 +22,21 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.title}`,
-    template: `%s | ${siteConfig.name}`,
+    default: `prashanta.dev — ${siteConfig.title}`,
+    template: `%s — prashanta.dev`,
   },
   description: siteConfig.description,
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.domain,
-    siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.title}`,
+    siteName: "prashanta.dev",
+    title: `prashanta.dev — ${siteConfig.title}`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.title}`,
+    title: `prashanta.dev — ${siteConfig.title}`,
     description: siteConfig.description,
   },
   robots: {

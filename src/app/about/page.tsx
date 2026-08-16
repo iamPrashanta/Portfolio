@@ -20,33 +20,32 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-header">
         {/* Hero Section */}
-        <Section size="lg" className="overflow-hidden mt-[80px] !pb-0">
-          <Container size="large" className="text-center flex flex-col items-center animate-fade-up">
-            <SectionHeading
-              badge="About"
-              heading={profile.tagline}
-              subtext={profile.bio}
-              align="center"
-              headingAs="h1"
-              className="max-w-[800px] items-center"
-            />
-          </Container>
-        </Section>
-
-        {/* Hero Image */}
-        <Section size="sm">
-          <Container size="xlarge">
-            <div className="relative w-full aspect-square md:aspect-[4/5] lg:aspect-[21/9] rounded-[24px] overflow-hidden bg-neutral-100 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              <PrashantaImage 
-                src="/images/me/me2.png" 
-                alt="Prashanta" 
-                fill 
-                className="object-cover object-center" 
-                priority
-                fallbackLabel="PRASHANTA"
-              />
+        <Section size="lg" className="overflow-hidden">
+          <Container size="default">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+              <div className="flex flex-col items-start animate-fade-up">
+                <SectionHeading
+                  badge="About"
+                  heading={profile.tagline}
+                  subtext={profile.bio}
+                  align="left"
+                  headingAs="h1"
+                  className="max-w-full"
+                />
+              </div>
+              
+              <div className="relative w-full aspect-square md:aspect-[4/5] lg:aspect-[3/4] rounded-[24px] overflow-hidden bg-neutral-100 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+                <PrashantaImage 
+                  src="/images/me/me2.png" 
+                  alt="Prashanta" 
+                  fill 
+                  className="object-cover object-center" 
+                  priority
+                  fallbackLabel="PRASHANTA"
+                />
+              </div>
             </div>
           </Container>
         </Section>

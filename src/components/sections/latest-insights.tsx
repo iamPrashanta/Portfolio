@@ -11,7 +11,7 @@ export function LatestInsights() {
 
   return (
     <Section size="lg" className="bg-neutral-50">
-      <Container size="xlarge">
+      <Container size="default">
         <SectionHeading
           badge="Latest Insights"
           heading="Engineering articles, system design deep dives, and technical thoughts."

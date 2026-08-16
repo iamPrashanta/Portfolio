@@ -48,9 +48,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-header bg-black text-white">
         {/* Hero Section */}
-        <Section size="none" className="pt-[140px] pb-[40px] md:pt-[180px] md:pb-[60px] overflow-hidden bg-black text-white">
+        <Section size="lg" className="overflow-hidden">
           <Container size="large" className="flex flex-col items-start animate-fade-up">
             <div className="w-16 h-16 rounded-2xl border border-white/20 flex items-center justify-center mb-8">
               <Image src={service.icon} alt="" width={32} height={32} className="w-8 h-8 invert opacity-80 rounded-none" />
@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         </Section>
 
         {/* Features Section */}
-        <Section size="none" className="py-[96px] md:py-[144px]">
+        <Section size="lg">
           <Container size="large">
             <SectionHeading
               badge="Capabilities"

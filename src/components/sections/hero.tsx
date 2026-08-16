@@ -5,13 +5,17 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 import { ProjectMarquee } from "./project-marquee";
+import { Logo } from "@/components/brand/logo";
 
 export function Hero() {
   return (
-    <Section size="lg" className="overflow-hidden mt-[80px]">
-      <Container size="large" className="text-center flex flex-col items-center">
+    <Section size="lg" className="overflow-hidden">
+      <Container size="default" className="text-center flex flex-col items-center">
         <div className="animate-fade-up flex flex-col items-center max-w-[800px]">
-          <Badge className="mb-6">Welcome to prashanta.dev</Badge>
+          <Badge className="mb-6 gap-2">
+            <Logo variant="mark" className="[&>svg]:w-3.5 [&>svg]:h-3.5 text-accent" />
+            <span>Welcome to prashanta.dev</span>
+          </Badge>
           
           <h1 className="mb-6 tracking-tight">
             {profile.tagline}

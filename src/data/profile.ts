@@ -10,7 +10,7 @@ export const profile = {
     { label: "Lines of Code", value: "1.5M+", numericValue: 1.5, suffix: "M+" },
   ],
   contact: {
-    email: "hello@prashanta.dev",
+    emails: ["contact@prashanta.dev", "prashanta1403@proton.me"],
     location: "India",
     availability: "Available for new opportunities",
   },
