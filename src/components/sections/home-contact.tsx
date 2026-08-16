@@ -4,7 +4,6 @@ import * as React from "react";
 import { PrashantaImage } from "@/components/ui/prashanta-image";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/logo";
 import { siteConfig } from "@/config/site";
 import { ObfuscatedEmail } from "@/components/ui/obfuscated-email";

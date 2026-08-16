@@ -5,31 +5,43 @@ export interface Skill {
 
 export const skills: Skill[] = [
   {
-    category: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "Dart", "SQL", "Go", "Bash"],
+    category: "Languages & Core",
+    items: ["Python", "PHP", "TypeScript", "JavaScript", "Dart", "SQL", "Bash"],
   },
   {
-    category: "Backend & APIs",
-    items: ["FastAPI", "Node.js", "Express", "NestJS", "REST", "GraphQL", "WebSockets", "WebRTC"],
+    category: "Backend Engineering",
+    items: ["Node.js", "Express", "Laravel", "FastAPI", "Django", "Flask", "ASP.NET", "Java"],
   },
   {
-    category: "Frontend & Mobile",
-    items: ["React", "Next.js", "Flutter", "Tailwind CSS", "Redux", "Framer Motion"],
+    category: "Frontend Engineering",
+    items: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Bootstrap", "Electron", "HTML5", "CSS3"],
   },
   {
-    category: "Databases & Cache",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase", "Prisma"],
+    category: "Mobile Development",
+    items: ["Flutter", "Dart", "Riverpod", "Firebase", "Local Auth"],
   },
   {
-    category: "Cloud & DevOps",
-    items: ["AWS (EC2, S3, RDS)", "Docker", "Podman", "Nginx", "GitHub Actions", "CI/CD", "Linux"],
+    category: "Databases & Data",
+    items: ["PostgreSQL", "MySQL", "SQL Server", "SQLite", "Redis", "Supabase", "Prisma", "Drizzle ORM", "Power BI", "JSON/XML Validation"],
   },
   {
-    category: "Security",
-    items: ["OAuth", "JWT", "AES-256", "SSL/TLS", "RBAC/ABAC", "Rate Limiting"],
+    category: "AI / LLM Engineering",
+    items: ["LangChain", "LangGraph", "RAG", "Ollama", "HuggingFace", "Vector DBs (FAISS)"],
   },
   {
-    category: "AI & Tools",
-    items: ["OpenAI API", "LangChain", "Vector DBs", "Git", "Postman", "Figma"],
+    category: "Cloud & Infrastructure",
+    items: ["AWS (EC2, S3, RDS, IAM)", "AWS CloudWatch", "AWS GuardDuty", "GCP", "DigitalOcean"],
+  },
+  {
+    category: "DevOps & Automation",
+    items: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Terraform", "Nginx", "n8n", "CI/CD"],
+  },
+  {
+    category: "Security & Authentication",
+    items: ["AES-256", "JWT", "OAuth2", "SSL/TLS", "RBAC/ABAC", "API Rate Limiting"],
+  },
+  {
+    category: "APIs & Integrations",
+    items: ["Yes Bank API", "Axis Bank API", "Stripe", "Razorpay", "PayPal", "WebRTC", "WebSockets"],
   },
 ];

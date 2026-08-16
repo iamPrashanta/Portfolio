@@ -3,7 +3,6 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/brand/logo";
 
 import { Section } from "@/components/ui/section";
 

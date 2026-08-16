@@ -144,20 +144,17 @@ export const navigation: NavigationEntry[] = [
   },
 ];
 
+import { services } from "@/data/services";
+
 // ── Footer Navigation ───────────────────────────────────
 
 export const footerNavigation = {
   services: {
     title: "Services",
-    links: [
-      { title: "Backend Development", href: "/services/backend-development" },
-      { title: "Full Stack Development", href: "/services/full-stack-development" },
-      { title: "API Integration", href: "/services/api-integration" },
-      { title: "Cloud & DevOps", href: "/services/cloud-devops" },
-      { title: "Database Optimization", href: "/services/database-optimization" },
-      { title: "Security & Architecture", href: "/services/security-architecture" },
-      { title: "AI & Automation", href: "/services/ai-automation" },
-    ],
+    links: services.map(service => ({
+      title: service.title,
+      href: `/services/${service.slug}`
+    })),
   },
   company: {
     title: "Company",
