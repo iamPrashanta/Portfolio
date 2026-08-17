@@ -46,16 +46,22 @@ export default function ServicesPage() {
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-              {skills.map((skillGroup, idx) => (
+              {Object.entries(
+                skills.reduce((acc, skill) => {
+                  if (!acc[skill.category]) acc[skill.category] = [];
+                  acc[skill.category].push(skill);
+                  return acc;
+                }, {} as Record<string, typeof skills>)
+              ).map(([category, items], idx) => (
                 <div key={idx} className="animate-fade-up" style={{ animationDelay: `${idx * 0.1}s` }}>
                   <h4 className="text-[1.25rem] font-medium mb-6 pb-4 border-b border-neutral-200">
-                    {skillGroup.category}
+                    {category}
                   </h4>
                   <ul className="flex flex-col gap-4">
-                    {skillGroup.items.map((item, itemIdx) => (
+                    {items.map((item, itemIdx) => (
                       <li key={itemIdx} className="text-neutral-900 text-[1rem] flex items-center gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
-                        {item}
+                        {item.name}
                       </li>
                     ))}
                   </ul>

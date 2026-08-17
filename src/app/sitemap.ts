@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { careers } from "@/data/careers";
+import { skills } from "@/data/skills";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
@@ -70,6 +71,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Dynamic Skill Pages
+  const skillRoutes = skills.map((skill) => ({
+    url: `${baseUrl}/skills/${skill.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...coreRoutes,
     ...supportingRoutes,
@@ -77,5 +86,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceRoutes,
     ...projectRoutes,
     ...careerRoutes,
+    ...skillRoutes,
   ];
 }
