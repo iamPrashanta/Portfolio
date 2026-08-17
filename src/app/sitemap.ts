@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
+import { careers } from "@/data/careers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/about", priority: 0.9 },
     { route: "/contact", priority: 0.9 },
     { route: "/connect", priority: 0.9 },
+    { route: "/careers", priority: 0.8 },
   ].map(({ route, priority }) => ({
     url: `${baseUrl}${route}`,
     lastModified: fallbackDate,
@@ -60,11 +62,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Dynamic Career Pages
+  const careerRoutes = careers.map((career) => ({
+    url: `${baseUrl}/careers/${career.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...coreRoutes,
     ...supportingRoutes,
     ...legalRoutes,
     ...serviceRoutes,
     ...projectRoutes,
+    ...careerRoutes,
   ];
 }

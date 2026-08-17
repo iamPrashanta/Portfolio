@@ -65,6 +65,7 @@ export const navigation: NavigationEntry[] = [
         items: [
           { title: "Clients", href: "/clients", description: "Organizations I've worked with" },
           { title: "Services", href: "/services", description: "Consulting & engineering services" },
+          { title: "Careers", href: "/careers", description: "Specialist opportunities & collaboration" },
         ],
       },
     ],
@@ -162,6 +163,7 @@ export const footerNavigation = {
       { title: "About", href: "/about" },
       { title: "Projects", href: "/projects" },
       { title: "Case Studies", href: "/case-studies" },
+      { title: "Careers", href: "/careers" },
       { title: "Resume", href: "/resume" },
       { title: "Contact", href: "/contact" },
     ],

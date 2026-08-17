@@ -76,7 +76,7 @@ export function CurrentFocus() {
               </Button>
             </Link>
             <Link href="/lab">
-              <Button variant="outline" size="large" className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 backdrop-blur-sm">
+              <Button variant="outlineLight" size="large" className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 backdrop-blur-sm">
                 Visit the Lab
               </Button>
             </Link>
