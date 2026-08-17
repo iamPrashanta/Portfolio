@@ -1,14 +1,15 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
   // Hide X-Powered-By header for security obscurity
   poweredByHeader: false,
-  
+
   // Set strict HTTP security headers
   async headers() {
     return [
       {
-        // Apply these headers to all routes
         source: "/(.*)",
         headers: [
           {
@@ -29,11 +30,46 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Referrer-Policy",
-            value: "origin-when-cross-origin",
+            value: "strict-origin-when-cross-origin",
           },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+          {
+            key: "X-Permitted-Cross-Domain-Policies",
+            value: "none",
+          },
+          {
+            // COOP isolates the browsing context from cross-origin windows
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin-allow-popups",
+          },
+          {
+            // Content Security Policy
+            // Allows: self, Google Fonts, Google Analytics, Vercel Speed Insights
+            // Blocks: inline scripts (except GA inline), unknown origins
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              // 'unsafe-eval' required by React dev mode for stack trace reconstruction — never used in production
+              `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com`,
+              // 'unsafe-inline' required for Tailwind/CSS-in-JS styles
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com data:",
+              // https: allows external logos on skill pages (official tech sites, CDNs)
+              "img-src 'self' data: blob: https:",
+              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              "media-src 'self'",
+              "object-src 'none'",
+              // Allows popups to external links (GitHub, LinkedIn, official skill sites)
+              "frame-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              // Consistent with X-Frame-Options: SAMEORIGIN removed above
+              "frame-ancestors 'none'",
+              "upgrade-insecure-requests",
+            ].join("; "),
           },
         ],
       },
