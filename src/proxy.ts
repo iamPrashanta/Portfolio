@@ -92,6 +92,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   // Run on all routes EXCEPT Next.js internals and static files
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|icon|apple-icon|robots.txt|sitemap.xml).*)",
+    "/((?!_next/static|_next/image|images|videos|icons|brand|favicon.ico|icon|apple-icon|robots.txt|sitemap.xml).*)",
   ],
 };

@@ -40,9 +40,9 @@ export function ProjectCard({ project, variant = "v2", inverse = false, classNam
             {project.description}
           </p>
         </div>
-        <div className="bg-white rounded-b-[16px] px-6 py-4 flex items-center justify-between border-t border-neutral-100">
-          <h3 className="text-[1rem] font-medium text-neutral-950">{project.title}</h3>
-          <div className="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center transition-transform group-hover:bg-black group-hover:text-white">
+        <div className="bg-white rounded-b-[16px] px-6 py-4 flex items-center justify-between border-t border-neutral-100 gap-4">
+          <h3 className="text-[1rem] font-medium text-neutral-950 truncate flex-1">{project.title}</h3>
+          <div className="shrink-0 w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center transition-transform group-hover:bg-black group-hover:text-white">
             <PrashantaImage
               src="/icons/plus-circle.svg"
               alt=""
@@ -77,9 +77,9 @@ export function ProjectCard({ project, variant = "v2", inverse = false, classNam
           </div>
         )}
       </div>
-      <div className="flex items-center justify-between">
-        <h3 className={cn("text-[1.5rem] font-medium tracking-tight", inverse ? "text-white" : "text-neutral-950")}>{project.title}</h3>
-        <div className={cn("w-10 h-10 rounded-full border flex items-center justify-center transition-all group-hover:bg-black group-hover:border-black", inverse ? "border-white/20 hover:bg-white" : "border-neutral-200")}>
+      <div className="flex items-center justify-between gap-4">
+        <h3 className={cn("text-[1.5rem] font-medium tracking-tight truncate flex-1", inverse ? "text-white" : "text-neutral-950")}>{project.title}</h3>
+        <div className={cn("shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all group-hover:bg-black group-hover:border-black", inverse ? "border-white/20 hover:bg-white" : "border-neutral-200")}>
           <PrashantaImage
             src="/icons/plus.svg"
             alt=""

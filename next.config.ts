@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
   // Hide X-Powered-By header for security obscurity
   poweredByHeader: false,
 
+  // Allow Next.js image optimizer to handle external images
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "**" },
+    ],
+  },
+
   // Set strict HTTP security headers
   async headers() {
     return [
@@ -53,13 +60,14 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               // 'unsafe-eval' required by React dev mode for stack trace reconstruction — never used in production
-              `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com`,
+              // Cloudflare Insights beacon is injected at CDN level — must be allowed
+              `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com`,
               // 'unsafe-inline' required for Tailwind/CSS-in-JS styles
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com data:",
               // https: allows external logos on skill pages (official tech sites, CDNs)
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://cloudflareinsights.com",
               "media-src 'self'",
               "object-src 'none'",
               // Allows popups to external links (GitHub, LinkedIn, official skill sites)
