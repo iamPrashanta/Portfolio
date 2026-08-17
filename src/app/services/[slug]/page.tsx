@@ -50,9 +50,23 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       <Navbar />
       <main className="pt-header bg-black text-white">
         {/* Hero Section */}
-        <Section size="lg" className="overflow-hidden">
-          <Container size="large" className="flex flex-col items-start animate-fade-up">
-            <div className="w-16 h-16 rounded-2xl border border-white/20 flex items-center justify-center mb-8">
+        <Section size="lg" className="overflow-hidden relative">
+          {/* Background Video */}
+          <div className="absolute inset-0 w-full h-full z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="object-cover w-full h-full opacity-[0.15]"
+            >
+              <source src="/videos/waves.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+          </div>
+          
+          <Container size="large" className="flex flex-col items-start animate-fade-up relative z-10">
+            <div className="w-16 h-16 rounded-2xl border border-white/20 flex items-center justify-center mb-8 bg-black/40 backdrop-blur-sm">
               <Image src={service.icon} alt="" width={32} height={32} className="w-8 h-8 opacity-80 rounded-none" />
             </div>
             <SectionHeading

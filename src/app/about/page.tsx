@@ -9,6 +9,7 @@ import { ContactCta } from "@/components/sections/contact-cta";
 import { SelectedWork } from "@/components/sections/selected-work";
 import { ProfessionalJourney } from "@/components/sections/professional-journey";
 import { CurrentFocus } from "@/components/sections/current-focus";
+import { HowIBuild } from "@/components/sections/how-i-build";
 import { profile } from "@/data/profile";
 
 export const metadata = {
@@ -53,6 +54,7 @@ export default function AboutPage() {
         <SelectedWork />
         <ProfessionalJourney />
         <CurrentFocus />
+        <HowIBuild />
         <ContactCta />
       </main>
       <Footer />
