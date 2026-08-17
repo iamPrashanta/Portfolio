@@ -23,6 +23,7 @@ export const siteConfig = {
     text: "Start a Project",
     href: "/contact",
   },
+  lastUpdated: "2026-08-17T00:00:00Z",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

@@ -9,15 +9,15 @@ import { Logo } from "@/components/brand/logo";
 
 export function Hero() {
   return (
-    <Section size="lg" className="overflow-hidden">
+    <Section size="lg" className="overflow-hidden !pt-12 md:!pt-20">
       <Container size="default" className="text-center flex flex-col items-center">
-        <div className="animate-fade-up flex flex-col items-center max-w-[800px]">
+        <div className="animate-fade-up flex flex-col items-center max-w-[1000px] mx-auto">
           <Badge className="mb-6 gap-2">
             <Logo variant="mark" className="[&>svg]:w-3.5 [&>svg]:h-3.5 text-accent" />
             <span>Welcome to prashanta.dev</span>
           </Badge>
           
-          <h1 className="mb-6 tracking-tight">
+          <h1 className="mb-6 tracking-tight text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[4.75rem] font-bold leading-tight md:leading-[1.1]">
             {profile.tagline}
           </h1>
           

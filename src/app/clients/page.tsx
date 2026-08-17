@@ -10,6 +10,10 @@ import { PrashantaImage } from "@/components/ui/prashanta-image";
 export const metadata = {
   title: "Protected Page | Clients",
   description: "Enter your password to access the client portal.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function ClientsPage() {

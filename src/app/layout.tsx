@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
+import Script from "next/script";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 import { ConsoleMessage } from "@/components/ui/console-message";
@@ -53,6 +54,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HPFSQM4ZBH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HPFSQM4ZBH');
+          `}
+        </Script>
         <ConsoleMessage />
         {children}
       </body>
