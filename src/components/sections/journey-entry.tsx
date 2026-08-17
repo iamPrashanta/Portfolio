@@ -55,9 +55,13 @@ export function JourneyEntry({ entry, isLast }: { entry: ExperienceEntry; isLast
         </div>
 
         {entry.description && (
-          <p className="text-[1rem] leading-relaxed text-neutral-800 mb-8 max-w-[700px]">
-            {entry.description}
-          </p>
+          <div className="mb-8 max-w-[700px] flex flex-col gap-4">
+            {entry.description.split("\n\n").map((para, i) => (
+              <p key={i} className="text-[1rem] leading-relaxed text-neutral-800">
+                {para}
+              </p>
+            ))}
+          </div>
         )}
 
         {/* Roles Progression */}
