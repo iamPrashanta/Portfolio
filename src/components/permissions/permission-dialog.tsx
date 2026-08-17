@@ -55,7 +55,7 @@ export function PermissionDialog({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-fade-up" style={{ animationDuration: "0.3s" }}>
       <div 
-        className="w-full max-w-[480px] bg-white dark:bg-[#111] rounded-[24px] p-8 md:p-10 shadow-2xl border border-black/5 dark:border-white/10 relative"
+        className="w-full max-w-[480px] bg-white rounded-[24px] p-8 md:p-10 shadow-2xl border border-black/5 relative"
         role="dialog"
         aria-modal="true"
         aria-labelledby="permission-dialog-title"
@@ -66,7 +66,7 @@ export function PermissionDialog({
         </h4>
 
         {/* Heading */}
-        <h2 id="permission-dialog-title" className="text-[1.75rem] md:text-[2rem] font-medium leading-tight mb-4 text-black dark:text-white">
+        <h2 id="permission-dialog-title" className="text-[1.75rem] md:text-[2rem] font-medium leading-tight mb-4 text-foreground">
           {heading}
         </h2>
 
@@ -87,7 +87,7 @@ export function PermissionDialog({
           <button
             onClick={onClose}
             disabled={isRequesting}
-            className="px-6 py-3 rounded-full text-[1rem] font-medium text-muted hover:text-black dark:hover:text-white transition-colors"
+            className="px-6 py-3 rounded-full text-[1rem] font-medium text-muted hover:text-foreground transition-colors"
           >
             {secondaryLabel}
           </button>
@@ -95,7 +95,7 @@ export function PermissionDialog({
 
         {/* Supporting Privacy Text */}
         {supportingText && (
-          <div className="pt-6 border-t border-black/10 dark:border-white/10">
+          <div className="pt-6 border-t border-black/10">
             <p className="text-[0.875rem] text-muted/80">
               {supportingText}
             </p>

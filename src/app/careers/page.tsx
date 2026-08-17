@@ -15,7 +15,7 @@ export default function CareersPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-header min-h-screen flex flex-col bg-white dark:bg-black">
+      <main className="pt-header min-h-screen flex flex-col bg-white">
         <Section size="lg" className="flex-1 flex flex-col justify-center">
           <Container size="default">
             <div className="max-w-3xl mx-auto text-center animate-fade-up">

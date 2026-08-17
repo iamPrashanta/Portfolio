@@ -8,7 +8,7 @@ import { careers, Career } from "@/data/careers";
 function SpecialistCard({ career }: { career: Career }) {
   return (
     <Link href={`/careers/${career.slug}`} className="block relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-[24px]">
-      <div className="w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/3] rounded-[24px] overflow-hidden bg-neutral-100 dark:bg-white/5 border border-transparent dark:border-white/10 group-hover:border-accent/30 dark:group-hover:border-accent/50 transition-all duration-500 relative">
+      <div className="w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/3] rounded-[24px] overflow-hidden bg-neutral-100 border border-transparent group-hover:border-accent/30 transition-all duration-500 relative">
         {career.image && (
           <Image
             src={career.image}
@@ -49,15 +49,15 @@ function SpecialistCard({ career }: { career: Career }) {
 
 export function TeamSection() {
   return (
-    <Section size="lg" id="team" className="bg-white dark:bg-black">
+    <Section size="lg" id="team" className="bg-white">
       <Container size="large">
         <div className="flex flex-col mb-16 animate-fade-up">
           <h4 className="font-badge uppercase tracking-wider text-[12px] text-muted mb-8">
             + SPECIALIST NETWORK
           </h4>
           
-          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 pb-12 border-b border-black/10 dark:border-white/10">
-            <h2 className="text-[2.5rem] md:text-[3.5rem] font-medium leading-tight max-w-2xl text-black dark:text-white">
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 pb-12 border-b border-black/10">
+            <h2 className="text-[2.5rem] md:text-[3.5rem] font-medium leading-tight max-w-2xl text-foreground">
               A flexible team for complex work.
             </h2>
             <p className="text-[1.125rem] leading-relaxed text-muted max-w-sm lg:pb-2">

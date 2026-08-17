@@ -37,6 +37,10 @@ export const experience: ExperienceEntry[] = [
       "Delivering secure backend architectures, API integrations, and role-based access control (RBAC/ABAC).",
       "Architecting real-time WebRTC applications, spatial analytics, and workflow automations.",
       "Developing independent products, tools, and open engineering experiments.",
+      "Building high-performance mobile applications for Android and iOS platforms.",
+      "Conducting comprehensive security penetration testing and system hardening.",
+      "Designing and implementing resilient microservices and highly scalable distributed systems.",
+      "Training and optimizing AI models utilizing teacher-student knowledge distillation strategies in Python.",
     ],
   },
   {

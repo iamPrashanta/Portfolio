@@ -32,11 +32,11 @@ export function SectionHeading({
       <Badge className={cn("mb-6", inverse && "bg-white/10 text-white border-white/20")}>{badge}</Badge>
       
       {heading && (
-        <HeadingAs className={cn("mb-6", inverse ? "text-white" : "text-black dark:text-white")}>{heading}</HeadingAs>
+        <HeadingAs className={cn("mb-6", inverse ? "text-white" : "text-foreground")}>{heading}</HeadingAs>
       )}
       
       {subtext && (
-        <div className={cn("text-[1rem] md:max-w-[80%]", inverse ? "text-white/80" : "text-neutral-600 dark:text-neutral-400")}>
+        <div className={cn("text-[1rem] md:max-w-[80%]", inverse ? "text-white/70" : "text-muted")}>
           {subtext}
         </div>
       )}

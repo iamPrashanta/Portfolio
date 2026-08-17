@@ -39,8 +39,8 @@ export function MediaPermission({ isOpen, options, onClose, onComplete }: MediaP
       
       {/* Error state */}
       {error && (
-        <div className="p-4 rounded-lg bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 mt-4">
-          <p className="text-sm text-red-600 dark:text-red-400 font-medium">
+        <div className="p-4 rounded-lg bg-red-50 border border-red-200 mt-4">
+          <p className="text-sm text-red-600 font-medium">
             {error.message}
           </p>
         </div>

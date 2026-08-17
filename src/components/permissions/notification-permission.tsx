@@ -30,7 +30,7 @@ export function NotificationPermission({ isOpen, onClose, onComplete }: Notifica
       <p>
         Receive occasional updates about new articles, experiments, and engineering work.
       </p>
-      <ul className="space-y-2 mt-4 text-black dark:text-white font-medium">
+      <ul className="space-y-2 mt-4 text-foreground font-medium">
         <li className="flex items-center gap-3">
           <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
             <svg className="w-2.5 h-2.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
