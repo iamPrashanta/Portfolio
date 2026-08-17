@@ -4,6 +4,7 @@ import Script from "next/script";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 import { ConsoleMessage } from "@/components/ui/console-message";
+import { PermissionProvider } from "@/components/permissions/permission-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,7 +68,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           `}
         </Script>
         <ConsoleMessage />
-        {children}
+        <PermissionProvider>
+          {children}
+        </PermissionProvider>
       </body>
     </html>
   );
