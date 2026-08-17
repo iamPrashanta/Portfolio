@@ -29,20 +29,19 @@ export const experience: ExperienceEntry[] = [
     company: "Independent / prashanta.dev",
     period: "2023 - Present",
     location: "Remote",
+    workMode: "Independent Engineering · Consulting · Personal Products",
     headline: "Full Stack Engineer & Consultant",
-    description:
-      "Architecting and developing full-stack web applications, secure backend systems, and intelligent tools for international clients and personal engineering products.",
+    description: "Building independent software products, engineering tools, client solutions, and technical experiments. \n\nDuring full-time employment periods, independent work focused primarily on existing commitments, personal products, engineering experiments, and projects supported through established collaborators.",
     highlights: [
-      "Building full-stack systems using Next.js, React, Node.js, Python, PostgreSQL, Redis, and Docker.",
-      "Delivering secure backend architectures, API integrations, and role-based access control (RBAC/ABAC).",
-      "Architecting real-time WebRTC applications, spatial analytics, and workflow automations.",
-      "Developing independent products, tools, and open engineering experiments.",
-      "Building high-performance mobile applications for Android and iOS platforms.",
-      "Conducting comprehensive security penetration testing and system hardening.",
-      "Designing and implementing resilient microservices and highly scalable distributed systems.",
-      "Training and optimizing AI models utilizing teacher-student knowledge distillation strategies in Python.",
+      "Architecting and developing independent software products, full-stack applications, secure backend systems, and intelligent tools.",
+      "Building systems using Next.js, React, Node.js, Python, PostgreSQL, Redis, Docker, and related technologies.",
+      "Developing personal engineering products, open experiments, technical prototypes, and selected client solutions.",
+      "Designing backend architectures, APIs, authentication systems, RBAC/ABAC, workflow automation, and real-time applications.",
+      "Exploring AI engineering, distributed systems, spatial analytics, mobile applications, and model optimization.",
+      "Maintaining and evolving existing projects and engineering commitments through established collaboration where appropriate."
     ],
   },
+
   {
     id: "unpay",
     company: "Unnatim Payments (UnPay)",
@@ -123,5 +122,22 @@ export const experience: ExperienceEntry[] = [
       },
     ],
     technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "AWS SES", "WebSockets"],
+  },
+
+  {
+    id: "freelance-developer",
+    company: "Independent Software Developer",
+    period: "Mar 2019 - Mar 2021",
+    location: "Remote",
+    workMode: "Freelance",
+    headline: "Web Development",
+    description:
+      "Worked independently with multiple clients, delivering custom websites, web applications, backend systems, and business solutions.",
+    highlights: [
+      "Built and deployed client projects from initial requirements to production.",
+      "Developed backend systems, databases, authentication, APIs, admin panels, and custom business workflows.",
+      "Worked directly with clients on requirements, technical planning, feature development, maintenance, and ongoing improvements.",
+      "Built experience across the complete software lifecycle—from client communication and architecture to deployment and support.",
+    ],
   },
 ];

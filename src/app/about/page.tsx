@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="flex flex-col items-start animate-fade-up">
                 <SectionHeading
-                  badge="About"
+                  badge="About Prashanta Mondal"
                   heading={profile.tagline}
                   subtext={profile.bio}
                   align="left"
@@ -38,12 +38,12 @@ export default function AboutPage() {
                 />
               </div>
               
-              <div className="relative w-full aspect-square md:aspect-[4/5] lg:aspect-[3/4] rounded-[24px] overflow-hidden bg-neutral-100 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <div className="group relative w-full aspect-square md:aspect-[4/5] lg:aspect-[3/4] rounded-[24px] overflow-hidden bg-neutral-100 animate-fade-up" style={{ animationDelay: "0.2s" }}>
                 <PrashantaImage 
                   src="/images/me/me2.png" 
                   alt="Prashanta" 
                   fill 
-                  className="object-cover object-center" 
+                  className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105" 
                   priority
                   fallbackLabel="PRASHANTA"
                 />
