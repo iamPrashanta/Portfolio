@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export const metadata: Metadata = {
-  title: "Careers & Collaboration",
+  title: "Careers & Collaboration — Specialist Opportunities",
   description: "Career opportunities and specialist collaborations at prashanta.dev.",
 };
 

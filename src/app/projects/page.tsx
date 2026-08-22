@@ -9,8 +9,8 @@ import { ContactCta } from "@/components/sections/contact-cta";
 import { projects } from "@/data/projects";
 
 export const metadata = {
-  title: "Projects",
-  description: "A selection of engineering projects, case studies, and systems built by Prashanta Mondal.",
+  title: "Engineering Projects & Case Studies",
+  description: "A selection of engineering projects, case studies, and scalable systems built by Prashanta Mondal.",
 };
 
 export default function ProjectsPage() {

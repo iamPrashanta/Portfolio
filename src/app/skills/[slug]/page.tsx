@@ -20,6 +20,7 @@ import { SkillCodingStyle } from "@/components/skills/skill-coding-style";
 import { SkillSecurity } from "@/components/skills/skill-security";
 import { SkillRelated } from "@/components/skills/skill-related";
 import { SkillUnderDevelopment } from "@/components/skills/skill-under-development";
+import { SkillCta } from "@/components/skills/skill-cta";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${skill.name}: Architecture, Ecosystem & Security | Prashanta.dev`,
     description: skill.content?.overview || skill.description,
+    openGraph: {
+      url: `/skills/${skill.slug}`,
+    },
   };
 }
 
@@ -63,6 +67,11 @@ export default async function SkillDetailPage({ params }: PageProps) {
       <>
         <Navbar />
         <SkillUnderDevelopment skill={skill} />
+        {skill.relatedServices && skill.relatedServices.length > 0 && (
+          <Container size="default" className="max-w-4xl mx-auto pb-24">
+            <SkillCta skill={skill} />
+          </Container>
+        )}
         <Footer />
       </>
     );
@@ -85,6 +94,7 @@ export default async function SkillDetailPage({ params }: PageProps) {
             <SkillCodingStyle skill={skill} />
             <SkillSecurity skill={skill} />
             <SkillRelated skill={skill} />
+            <SkillCta skill={skill} />
           </Container>
         </Section>
         <ContactCta />

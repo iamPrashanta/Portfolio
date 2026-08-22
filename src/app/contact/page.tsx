@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 import { ObfuscatedEmail } from "@/components/ui/obfuscated-email";
 
 export const metadata = {
-  title: "Contact",
-  description: "Get in touch with Prashanta Mondal for software engineering and consulting opportunities.",
+  title: "Contact — Start a Project or Consultation",
+  description: "Get in touch with Prashanta Mondal for software engineering, consulting, and collaboration opportunities.",
 };
 
 export default function ContactPage() {

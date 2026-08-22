@@ -1,4 +1,10 @@
-import ContactPage from "@/app/contact/page";
+import ContactPage, { metadata as contactMetadata } from "@/app/contact/page";
 
-// Connect is simply an alias for the Contact page in this architecture
+export const metadata = {
+  ...contactMetadata,
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
 export default ContactPage;

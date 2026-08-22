@@ -64,6 +64,7 @@ export interface Skill {
   logo?: string;
   status: SkillStatus;
   content?: SkillContent;
+  relatedServices?: string[];
 }
 
 export const skills: Skill[] = [
@@ -76,6 +77,7 @@ export const skills: Skill[] = [
     category: "Languages & Core",
     description: "High-level programming language for general-purpose programming, data science, and AI.",
     status: "documented",
+    relatedServices: ["backend-development", "ai-automation", "data-engineering"],
     content: {
       overview: "Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected.",
       officialWebsite: "https://www.python.org/",
@@ -440,6 +442,7 @@ export const skills: Skill[] = [
     category: "Backend Engineering",
     description: "An asynchronous event-driven JavaScript runtime designed to build scalable network applications.",
     status: "documented",
+    relatedServices: ["backend-development", "api-integration"],
     content: {
       overview: "Node.js is a cross-platform JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. It revolutionized full-stack development by unifying the language used on the client and server.",
       officialWebsite: "https://nodejs.org/",
@@ -575,6 +578,7 @@ export const skills: Skill[] = [
     category: "Frontend Engineering",
     description: "The React Framework for the Web.",
     status: "documented",
+    relatedServices: ["full-stack-development", "saas-product-development", "ecommerce-development"],
     content: {
       overview: "Next.js is a full-stack React framework created by Vercel. It enables you to create high-quality web applications with features like Server-Side Rendering (SSR), Static Site Generation (SSG), and Server Components.",
       officialWebsite: "https://nextjs.org/",
@@ -644,6 +648,7 @@ export const skills: Skill[] = [
     name: "TypeScript",
     status: "documented",
     description: "A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+    relatedServices: ["full-stack-development", "backend-development"],
     category: "Languages & Core",
     content: {
         overview: "TypeScript is a free and open-source high-level programming language developed by Microsoft that adds static typing with optional type annotations to JavaScript.",

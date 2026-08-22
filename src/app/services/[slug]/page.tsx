@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { services } from "@/data/services";
+import { ServiceProjects } from "@/components/services/service-projects";
 
 import { Section } from "@/components/ui/section";
 
@@ -27,6 +28,9 @@ export async function generateMetadata({ params }: ServiceDetailPageProps) {
   return {
     title: service.title,
     description: service.shortDescription,
+    openGraph: {
+      url: `/services/${service.slug}`,
+    },
   };
 }
 
@@ -99,6 +103,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                 </div>
               ))}
             </div>
+
+            <ServiceProjects service={service} />
           </Container>
         </Section>
 

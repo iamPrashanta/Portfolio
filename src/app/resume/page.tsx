@@ -1,4 +1,10 @@
-import AboutPage from "@/app/about/page";
+import AboutPage, { metadata as aboutMetadata } from "@/app/about/page";
 
-// Resume aliases to About page for now
+export const metadata = {
+  ...aboutMetadata,
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default AboutPage;

@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import "./globals.css";
 import { ConsoleMessage } from "@/components/ui/console-message";
 import { PermissionProvider } from "@/components/permissions/permission-provider";
+import { JsonLd } from "@/components/seo/json-ld";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <GoogleAnalytics gaId="G-HPFSQM4ZBH" />
+        <JsonLd type="Person" />
         <ConsoleMessage />
         <PermissionProvider>
           {children}

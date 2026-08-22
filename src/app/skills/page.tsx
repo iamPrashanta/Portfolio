@@ -9,8 +9,8 @@ import { Section } from "@/components/ui/section";
 import { SkillsHub } from "@/components/skills/skills-hub";
 
 export const metadata = {
-  title: "Skills & Technology Hub",
-  description: "A structured overview of the technologies, frameworks, tools and systems I work with.",
+  title: "Technical Skills — Languages, Frameworks & Infrastructure",
+  description: "A structured overview of the programming languages, frameworks, cloud infrastructure, and systems engineering tools I work with.",
 };
 
 export default function SkillsPage() {

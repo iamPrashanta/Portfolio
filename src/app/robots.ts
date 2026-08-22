@@ -24,7 +24,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "ClaudeBot", disallow: "/" },
       { userAgent: "Omgili", disallow: "/" },
       { userAgent: "Omgilibot", disallow: "/" },
-      { userAgent: "facebookexternalhit", disallow: "/" },
     ],
     sitemap: `${siteConfig.domain}/sitemap.xml`,
   };

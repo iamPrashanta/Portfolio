@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
   return {
     title: project.title,
     description: project.description,
+    openGraph: {
+      url: `/projects/${project.slug}`,
+    },
   };
 }
 

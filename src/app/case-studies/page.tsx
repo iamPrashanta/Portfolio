@@ -1,4 +1,10 @@
-import ProjectsPage from "@/app/projects/page";
+import ProjectsPage, { metadata as projectsMetadata } from "@/app/projects/page";
 
-// Case studies aliases to Projects page for now
+export const metadata = {
+  ...projectsMetadata,
+  alternates: {
+    canonical: "/projects",
+  },
+};
+
 export default ProjectsPage;

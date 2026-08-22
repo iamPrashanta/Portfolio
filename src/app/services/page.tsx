@@ -9,8 +9,8 @@ import { ContactCta } from "@/components/sections/contact-cta";
 import { skills } from "@/data/skills";
 
 export const metadata = {
-  title: "Services",
-  description: "End-to-end software engineering, backend architecture, and technical consulting services.",
+  title: "Software Engineering Services — Backend, Full Stack & Cloud",
+  description: "End-to-end software engineering, secure backend architectures, cloud infrastructure, and technical consulting services.",
 };
 
 export default function ServicesPage() {

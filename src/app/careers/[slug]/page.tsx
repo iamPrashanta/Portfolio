@@ -31,6 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${career.title} — Careers`,
     description: career.summary,
+    openGraph: {
+      url: `/careers/${career.slug}`,
+    },
   };
 }
 

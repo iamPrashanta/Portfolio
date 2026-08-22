@@ -14,8 +14,8 @@ import { TeamSection } from "@/components/sections/team-section";
 import { profile } from "@/data/profile";
 
 export const metadata = {
-  title: "About",
-  description: "Learn more about Prashanta Mondal's background, experience, and approach to software engineering.",
+  title: "About Prashanta Mondal — Full Stack Engineer, India",
+  description: "Learn more about Prashanta Mondal's background, experience, and approach to software engineering, backend architecture, and consulting.",
 };
 
 export default function AboutPage() {
