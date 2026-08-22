@@ -60,3 +60,121 @@ export interface ComputerScienceTopic {
     keywords?: string[];
   };
 }
+
+export interface DeepTopic {
+  id: string;
+  title: string;
+  slug: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
+  estimatedStudyTime?: string;
+  shortDescription: string;
+  category: string;
+  
+  overview: {
+    question: string;
+    answer: string;
+  };
+  
+  whyItExists: {
+    problem: string;
+    solution: string;
+    keyInsight: string;
+  };
+  
+  coreConcepts: Array<{
+    title: string;
+    explanation: string;
+  }>;
+  
+  howItWorks?: Array<{
+    step: number;
+    title: string;
+    description: string;
+  }>;
+  
+  keyTerms: Array<{
+    term: string;
+    definition: string;
+  }>;
+  
+  connections: Array<{
+    topicId: string;
+    relationship: string;
+    strength?: "core" | "related" | "advanced";
+  }>;
+  
+  realWorldExamples?: Array<{
+    title: string;
+    description: string;
+    technologies?: string[];
+  }>;
+  
+  engineeringMoment?: {
+    year?: string;
+    title: string;
+    story: string;
+    lesson: string;
+  };
+  
+  misconceptions?: Array<{
+    myth: string;
+    reality: string;
+  }>;
+  
+  keyTakeaways: string[];
+  prerequisites: string[];
+  nextTopics: string[];
+  
+  practiceIdeas?: Array<{
+    title: string;
+    difficulty: string;
+    description: string;
+  }>;
+
+  seo?: {
+    title: string;
+    description: string;
+    keywords?: string[];
+  };
+}
+
+export interface HubData {
+  title: string;
+  description: string;
+  learningContext: {
+    intro: string;
+    pillars: Array<{ title: string; description: string; id: string }>;
+  };
+  knowledgeMap: unknown; // Will refine as I build the component
+  topicCategories: Array<{
+    id: string;
+    title: string;
+    description?: string;
+    topics: DeepTopic[];
+  }>;
+  conceptConnections: Array<{
+    title: string;
+    chain: string[]; // List of topic IDs or strings
+  }>;
+  systemMoments: Array<{
+    title: string;
+    whatHappened: string;
+    principle: string;
+    lesson: string;
+    usageToday: string;
+  }>;
+  whyItMatters: Array<{
+    concept: string;
+    practicalExamples: string[];
+  }>;
+  misconceptions: Array<{
+    myth: string;
+    reality: string;
+  }>;
+  learningPath: Array<{
+    phase: string;
+    title: string;
+    description: string;
+    topics: string[];
+  }>;
+}
