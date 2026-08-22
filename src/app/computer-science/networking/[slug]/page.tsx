@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { foundationsDeep } from "@/data/computer-science/foundations-deep";
+import { networkingDeep } from "@/data/computer-science/networking-deep";
 import { DeepTopicLayout } from "@/components/knowledge/topic/DeepTopicLayout";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -12,14 +12,14 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return foundationsDeep.map((topic) => ({
+  return networkingDeep.map((topic) => ({
     slug: topic.slug,
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const topic = foundationsDeep.find((t) => t.slug === slug);
+  const topic = networkingDeep.find((t) => t.slug === slug);
   
   if (!topic) return { title: "Not Found" };
   
@@ -32,30 +32,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function DeepTopicPage({ params }: PageProps) {
   const { slug } = await params;
-  const topic = foundationsDeep.find((t) => t.slug === slug);
+  const topic = networkingDeep.find((t) => t.slug === slug);
   
   if (!topic) {
     notFound();
   }
 
   // Resolve nextTopics using their slugs from the local category or elsewhere if needed.
-  // For simplicity, we just pass the raw slugs for now and resolve them here.
   const resolvedNextTopics = topic.nextTopics.map(nextSlug => {
-    const found = foundationsDeep.find(t => t.slug === nextSlug);
+    const found = networkingDeep.find(t => t.slug === nextSlug);
     if (found) {
       return {
         slug: found.slug,
         title: found.title,
         description: found.shortDescription,
-        href: `/computer-science/foundations/${found.slug}`
+        href: `/computer-science/networking/${found.slug}`
       };
     }
-    // Fallback if not found in this array (could be in another category)
+    // Fallback if not found in this array
     return {
       slug: nextSlug,
       title: nextSlug.replace("-", " "),
       description: "Continue exploring this concept.",
-      href: `/computer-science/foundations/${nextSlug}`
+      href: `/computer-science/networking/${nextSlug}`
     };
   });
 
@@ -65,15 +64,15 @@ export default async function DeepTopicPage({ params }: PageProps) {
         type="TechArticle" 
         name={topic.title} 
         description={topic.shortDescription}
-        url={`${siteConfig.domain}/computer-science/foundations/${topic.slug}`}
+        url={`${siteConfig.domain}/computer-science/networking/${topic.slug}`}
       />
       <JsonLd 
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Home", item: siteConfig.domain },
           { name: "Knowledge", item: `${siteConfig.domain}/computer-science` },
-          { name: "Foundations", item: `${siteConfig.domain}/computer-science/foundations` },
-          { name: topic.title, item: `${siteConfig.domain}/computer-science/foundations/${topic.slug}` }
+          { name: "Networking", item: `${siteConfig.domain}/computer-science#networking` },
+          { name: topic.title, item: `${siteConfig.domain}/computer-science/networking/${topic.slug}` }
         ]}
       />
       <Navbar />

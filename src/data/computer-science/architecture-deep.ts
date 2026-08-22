@@ -6,41 +6,110 @@ export const architectureDeep: DeepTopic[] = [
     slug: "cpu-architecture",
     title: "CPU Architecture",
     difficulty: "Beginner",
+    estimatedStudyTime: "15 min",
     category: "computer-architecture",
     shortDescription: "The physical design and components of the central processing unit.",
+    
     overview: {
       question: "What actually executes my code?",
       answer: "The CPU is a highly orchestrated collection of microscopic logic gates that decode binary instructions and perform arithmetic or memory operations at billions of cycles per second."
     },
+
+    mentalModel: "Think of the CPU as a master chef in a very tight kitchen. The chef (Control Unit) reads a recipe (Code), fetches ingredients from the pantry (RAM), chops them on a tiny cutting board (Registers), and uses a stove (ALU) to cook them.",
+    
     whyItExists: {
-      problem: "We need a programmable, general-purpose machine capable of executing arbitrary mathematical and logical instructions.",
-      solution: "The Von Neumann architecture: combining an Arithmetic Logic Unit (ALU), a Control Unit, and Registers into a single processing chip.",
+      problem: "We need a programmable, general-purpose machine capable of executing arbitrary mathematical and logical instructions, rather than hard-wiring a machine for one specific task.",
+      solution: "The Von Neumann architecture: combining an Arithmetic Logic Unit (ALU), a Control Unit, and fast local memory (Registers) into a single processing chip.",
       keyInsight: "Both data and instructions can be stored in the same memory and processed sequentially."
     },
+
+    conceptLayers: [
+      { layer: "LAYER 01 — THE CHIP", title: "Silicon and Transistors", description: "At the lowest level, a CPU is just billions of microscopic electrical switches (transistors) etched into silicon." },
+      { layer: "LAYER 02 — THE LOGIC", title: "Logic Gates", description: "Transistors are wired together to form Logic Gates (AND, OR, NOT). Gates are wired together to form circuits that can add binary numbers." },
+      { layer: "LAYER 03 — THE COMPONENTS", title: "Functional Units", description: "Circuits are grouped into major components: the ALU for math, Registers for storage, and the Control Unit for orchestration." }
+    ],
+
+    howItWorksDetailed: {
+      explanation: "A CPU doesn't understand Python or Java. It only understands its specific Instruction Set Architecture (ISA). Here is how a CPU processes a single atomic instruction.",
+      flow: [
+        { label: "Fetch", annotation: "Read the next instruction from RAM into the CPU." },
+        { label: "Decode", annotation: "Translate the binary into electrical signals." },
+        { label: "Execute", annotation: "Perform the math or move the memory." },
+        { label: "Store", annotation: "Write the result back to a Register." }
+      ]
+    },
+
     coreConcepts: [
       { title: "ALU (Arithmetic Logic Unit)", explanation: "The part of the CPU that actually performs the math (addition, subtraction) and logic (AND, OR)." },
       { title: "Control Unit", explanation: "The director. It reads the instructions from memory and coordinates the other components to execute them." },
       { title: "Registers", explanation: "The smallest, fastest memory locations located directly inside the CPU core. The CPU can only perform operations on data currently loaded into registers." }
     ],
+    
     keyTerms: [
       { term: "Clock Speed", definition: "The frequency (measured in GHz) at which the CPU's internal clock ticks, determining how many cycles occur per second." },
-      { term: "ISA (Instruction Set Architecture)", definition: "The agreed-upon vocabulary of instructions (like x86 or ARM) that the CPU understands." }
+      { term: "ISA (Instruction Set Architecture)", definition: "The agreed-upon vocabulary of instructions (like x86 or ARM) that the CPU hardware understands." }
     ],
-    connections: [
-      { topicId: "instruction-cycle", relationship: "Executes instructions through the cycle" },
-      { topicId: "logic-and-boolean-algebra", relationship: "Built entirely out of boolean logic gates" }
+
+    whereItBreaks: [
+      { scenario: "The Memory Wall", description: "CPUs have gotten exponentially faster, but RAM has not kept up. Modern CPUs spend most of their time doing nothing, just waiting for data to arrive from RAM." },
+      { scenario: "Thermal Throttling", description: "Pushing 5 billion electrical pulses per second through silicon generates massive heat. If the CPU gets too hot, it must physically slow itself down to avoid melting." },
+      { scenario: "Context Switching", description: "When an OS switches between running programs, the CPU must dump all its Registers and load new ones. Doing this too often destroys performance." }
     ],
+
+    tradeoffs: [
+      {
+        advantage: "General Purpose (CPU)",
+        disadvantages: ["Slower at highly parallel math than specialized hardware."],
+        context: "Executing unpredictable branch-heavy application logic."
+      },
+      {
+        advantage: "Specialized (GPU/TPU)",
+        disadvantages: ["Terrible at general application logic.", "Harder to program."],
+        context: "Rendering graphics or multiplying massive matrices for AI."
+      }
+    ],
+
     engineeringMoment: {
+      year: "1980s",
       title: "The Shift to RISC",
-      story: "Historically, CPUs were designed with complex instructions (CISC) to minimize memory usage, which was expensive. As memory became cheaper and compilers got smarter, architectures shifted toward Reduced Instruction Set Computing (RISC), using simpler instructions that could be executed much faster through pipelining (e.g., modern ARM chips).",
-      lesson: "Hardware design is heavily influenced by the economic trade-offs of the era."
+      problem: "Early CPUs were designed with complex instructions (CISC) to minimize memory usage, which was incredibly expensive. But complex instructions were slow.",
+      response: "Engineers introduced Reduced Instruction Set Computing (RISC), using simpler, atomic instructions that could be executed in a single clock cycle through pipelining.",
+      tradeoff: "Programs took up more memory (because they needed more instructions to do the same task), but they executed significantly faster.",
+      today: "Modern mobile phones and Apple Silicon (M-series) chips use ARM (a RISC architecture), completely dominating mobile computing through superior power efficiency."
     },
-    realWorldExamples: [
-      { title: "Apple Silicon (M1/M2/M3)", description: "These chips utilize ARM architecture, which allows for highly efficient power usage compared to traditional x86 Intel chips." }
+
+    systemConnections: [
+      {
+        system: "Apple Silicon (M1/M2/M3)",
+        description: "These chips utilize the ARM (RISC) architecture, allowing for highly efficient power usage and low heat generation compared to traditional x86 Intel chips.",
+        layers: ["Hardware Architecture", "Instruction Set"]
+      }
     ],
+
+    connections: [
+      { topicId: "Instruction Cycle", relationship: "Executes instructions through the fetch-decode-execute loop.", href: "/computer-science/architecture/instruction-cycle", status: "available" },
+      { topicId: "Logic & Boolean Algebra", relationship: "Built entirely out of boolean logic gates.", href: "/computer-science/foundations/logic-and-boolean-algebra", status: "available" }
+    ],
+
+    exercises: {
+      understand: { 
+        question: "If a CPU has a clock speed of 3 GHz, roughly how many cycles occur in one second?",
+        hint: "Giga means billion."
+      },
+      predict: {
+        scenario: "You are tasked with rendering a complex 3D video game scene with millions of polygons.",
+        question: "Would you rely primarily on a CPU or a GPU? Why?"
+      }
+    },
+
+    misconceptions: [
+      { myth: "A 3GHz CPU runs exactly 3 billion instructions per second.", reality: "A single instruction may take multiple clock cycles to complete. However, due to pipelining, modern CPUs can sometimes complete multiple instructions per cycle." },
+      { myth: "More Cores = Faster Performance.", reality: "Only if the software is explicitly written to run in parallel. A single-threaded application will only ever use one core, leaving the rest idle." }
+    ],
+
     keyTakeaways: [
       "CPUs don't understand Python or Java; they only understand their specific ISA.",
-      "The CPU can only compute data if it is moved into a register first."
+      "The CPU can only compute data if it is moved into a Register first."
     ],
     prerequisites: ["logic-and-boolean-algebra", "abstraction"],
     nextTopics: ["instruction-cycle"]

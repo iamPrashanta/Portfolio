@@ -70,26 +70,47 @@ export interface DeepTopic {
   shortDescription: string;
   category: string;
   
+  // 02. The Core Question
   overview: {
     question: string;
     answer: string;
   };
   
+  // 03. Mental Model — simplest correct intuition
+  mentalModel?: string;
+  
+  // 04. Why It Exists
   whyItExists: {
     problem: string;
     solution: string;
     keyInsight: string;
   };
   
-  coreConcepts: Array<{
+  // 05. Concept Layers — progressive depth
+  conceptLayers?: Array<{
+    layer: string;     // e.g. "LAYER 01 — INTUITION"
     title: string;
-    explanation: string;
+    description: string;
   }>;
   
+  // 06. How It Works — supports steps, flows, and code
   howItWorks?: Array<{
     step: number;
     title: string;
     description: string;
+  }>;
+  
+  howItWorksDetailed?: {
+    explanation?: string;
+    steps?: Array<{ title: string; description: string }>;
+    codeExamples?: Array<{ title: string; code: string; language: string; description?: string }>;
+    flow?: Array<{ label: string; annotation?: string }>;
+  };
+  
+  // 07. Key Concepts
+  coreConcepts: Array<{
+    title: string;
+    explanation: string;
   }>;
   
   keyTerms: Array<{
@@ -97,10 +118,45 @@ export interface DeepTopic {
     definition: string;
   }>;
   
+  // 08. Where It Breaks — limitations, edge cases, failure modes
+  whereItBreaks?: Array<{
+    scenario: string;
+    description: string;
+  }>;
+  
+  // 09. Tradeoffs
+  tradeoffs?: Array<{
+    advantage: string;
+    disadvantages: string[];
+    context?: string;
+  }>;
+  
+  // 10. Engineering Moment — deeper than history
+  engineeringMoment?: {
+    year?: string;
+    title: string;
+    problem?: string;
+    response?: string;
+    tradeoff?: string;
+    today?: string;
+    story?: string;    // kept for backward compat
+    lesson?: string;   // kept for backward compat
+  };
+  
+  // 11. System Connections — where it appears in larger systems
+  systemConnections?: Array<{
+    system: string;
+    description: string;
+    layers?: string[];
+  }>;
+  
+  // Knowledge graph connections with safe link registry
   connections: Array<{
     topicId: string;
     relationship: string;
     strength?: "core" | "related" | "advanced";
+    href?: string;
+    status?: "available" | "coming-soon";
   }>;
   
   realWorldExamples?: Array<{
@@ -109,17 +165,17 @@ export interface DeepTopic {
     technologies?: string[];
   }>;
   
-  engineeringMoment?: {
-    year?: string;
-    title: string;
-    story: string;
-    lesson: string;
-  };
-  
   misconceptions?: Array<{
     myth: string;
     reality: string;
   }>;
+  
+  // 13. Try It Yourself — three tiers
+  exercises?: {
+    understand?: { question: string; hint?: string };
+    predict?: { scenario: string; question: string };
+    build?: { task: string; requirements?: string[] };
+  };
   
   keyTakeaways: string[];
   prerequisites: string[];

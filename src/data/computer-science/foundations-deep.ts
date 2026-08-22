@@ -86,40 +86,155 @@ export const foundationsDeep: DeepTopic[] = [
     slug: "big-o-notation",
     title: "Big O Notation",
     difficulty: "Beginner",
+    estimatedStudyTime: "15 min",
     category: "foundations",
     shortDescription: "The mathematical language for describing how algorithmic performance scales.",
+    
+    // 02. Core Question
     overview: {
-      question: "How does this program behave when the input becomes extremely large?",
-      answer: "Big O describes the upper bound of growth. It tells us how the runtime (or memory usage) increases as the number of elements (N) approaches infinity."
+      question: "The computer is getting faster. So why do algorithms still matter?",
+      answer: "Because data grows faster than CPU speed. Big O describes how a program behaves when the input grows from 100 items to 100 million. A fast computer running a bad algorithm will still fail at scale."
     },
+    
+    // 03. Mental Model
+    mentalModel: "Imagine the input size is a volume knob. Big O tells you what happens to the amount of computational work as you turn that knob higher and higher.",
+    
+    // 04. Why It Exists
     whyItExists: {
-      problem: "Execution time varies by hardware, language, and background processes. We can't compare algorithms just by running them with a stopwatch.",
-      solution: "A mathematical abstraction that drops constants and focuses only on the dominant growth rate.",
+      problem: "Execution time varies by hardware, language, and background processes. We can't objectively compare algorithms just by running them with a stopwatch on different machines.",
+      solution: "A mathematical abstraction that drops hardware constants and focuses entirely on the dominant growth curve of the algorithm.",
       keyInsight: "At scale, the shape of the growth curve matters far more than the speed of a single operation."
     },
+    
+    // 05. Concept Layers
+    conceptLayers: [
+      { layer: "LAYER 01 — INTUITION", title: "Counting Steps", description: "Instead of measuring seconds, we count how many fundamental operations an algorithm requires relative to the input size (n)." },
+      { layer: "LAYER 02 — MODEL", title: "Asymptotic Bounds", description: "We only care about the highest-order term. O(2n + 5) simply becomes O(n) because as n approaches infinity, the constants become irrelevant." },
+      { layer: "LAYER 03 — MECHANISM", title: "Time vs Space", description: "Big O is used to measure both Time Complexity (CPU cycles) and Space Complexity (RAM usage)." }
+    ],
+
+    // 06. How It Works
+    howItWorksDetailed: {
+      explanation: "Let's look at how the number of operations changes as the input size (n) increases across different complexity classes.",
+      codeExamples: [
+        {
+          title: "O(1) - Constant Time",
+          language: "javascript",
+          description: "Execution time is the same regardless of array size. It is a single step.",
+          code: "function getFirstElement(arr) {\n  return arr[0];\n}"
+        },
+        {
+          title: "O(n) - Linear Time",
+          language: "javascript",
+          description: "Execution time grows in direct proportion to the input size.",
+          code: "function printAllElements(arr) {\n  for (let i = 0; i < arr.length; i++) {\n    console.log(arr[i]);\n  }\n}"
+        },
+        {
+          title: "O(n²) - Quadratic Time",
+          language: "javascript",
+          description: "For every element, you iterate through every element again. Extremely dangerous at scale.",
+          code: "function printAllPairs(arr) {\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = 0; j < arr.length; j++) {\n      console.log(arr[i], arr[j]);\n    }\n  }\n}"
+        }
+      ],
+      flow: [
+        { label: "O(1)", annotation: "Instantly fast, always." },
+        { label: "O(log n)", annotation: "Grows very slowly. Ideal for massive datasets." },
+        { label: "O(n)", annotation: "Grows linearly. Acceptable but noticeable." },
+        { label: "O(n log n)", annotation: "The baseline for efficient sorting." },
+        { label: "O(n²)", annotation: "Will crash your server at scale." }
+      ]
+    },
+
+    // 07. Key Concepts
     coreConcepts: [
-      { title: "Asymptotic Analysis", explanation: "Evaluating the performance of an algorithm purely in terms of input size, ignoring hardware constants." },
-      { title: "Common Complexities", explanation: "O(1) constant, O(log N) logarithmic, O(N) linear, O(N log N) linearithmic, O(N²) quadratic." },
-      { title: "Space vs Time", explanation: "Big O applies to both the execution time and the auxiliary memory an algorithm requires." }
+      { title: "Worst-case Scenario", explanation: "Big O almost always refers to the worst-case scenario. If searching an array, we assume the item is at the very end." },
+      { title: "Dropping Constants", explanation: "O(5n) is considered O(n). We care about the trajectory of growth, not the exact slope." },
+      { title: "Amortized Time", explanation: "Sometimes an operation is O(n) once in a while, but O(1) most of the time (like resizing a dynamic array). On average, it behaves like O(1)." }
     ],
+    
     keyTerms: [
-      { term: "Worst-case", definition: "The maximum amount of time an algorithm can take for an input of size N (what Big O typically represents)." },
-      { term: "Amortized Time", definition: "The average time taken per operation, if you average it out over a sequence of operations (e.g., dynamic array resizing)." }
+      { term: "n", definition: "The size of the input data (e.g., number of items in an array)." },
+      { term: "Asymptotic Analysis", definition: "Evaluating limits as variables approach infinity." }
     ],
+
+    // 08. Where It Breaks
+    whereItBreaks: [
+      { scenario: "Small Datasets", description: "For very small inputs (n < 100), an O(n²) algorithm might actually run faster than an O(n log n) algorithm because it has less setup overhead." },
+      { scenario: "Memory Hierarchy (Cache)", description: "Big O assumes all memory access is equal. In reality, an O(n) linked list traversal is much slower than an O(n) array traversal because arrays are CPU cache-friendly." },
+      { scenario: "Hidden Constants", description: "If an O(1) database query takes a full second to execute over the network, it is \"constant\" but still terribly slow." }
+    ],
+
+    // 09. Tradeoffs
+    tradeoffs: [
+      {
+        advantage: "Hardware Independence",
+        disadvantages: ["Ignores hardware realities like CPU caching.", "Ignores heavy constant factors."],
+        context: "When communicating algorithm design between engineers on a whiteboard."
+      },
+      {
+        advantage: "Clear upper bound on scaling",
+        disadvantages: ["Can make developers overly paranoid about optimization for small datasets."],
+        context: "When building systems that must survive viral traffic spikes."
+      }
+    ],
+
+    // 10. Engineering Moment
+    engineeringMoment: {
+      year: "1965",
+      title: "The Formalization of Complexity",
+      problem: "Early computer scientists needed a way to prove that some problems were fundamentally harder to solve than others, regardless of how fast computers became.",
+      response: "Juris Hartmanis and Richard Stearns published 'On the Computational Complexity of Algorithms', formalizing the concept of time complexity classes.",
+      tradeoff: "It abstracted away the physical machine, which allowed pure mathematical analysis but created a gap between theory and actual hardware performance.",
+      today: "This foundation eventually led to the P vs NP problem, the most important unsolved problem in theoretical computer science.",
+      story: "Legacy story support",
+      lesson: "Legacy lesson support"
+    },
+
+    // 11. System Connections
+    systemConnections: [
+      {
+        system: "Database Queries",
+        description: "Executing a query without an index is O(n) (a full table scan). As the database grows to millions of rows, O(n) becomes too slow, forcing engineers to add a B-Tree index to achieve O(log n) lookups.",
+        layers: ["Application Layer", "Query Planner", "Storage Engine"]
+      },
+      {
+        system: "API Rate Limiting",
+        description: "Checking user permissions or rate limits on every incoming HTTP request must be O(1) (usually using a Hash Table or Redis), otherwise the server will melt under load.",
+        layers: ["Network Gateway", "Redis Cache"]
+      }
+    ],
+
+    // 12. Knowledge Connections
     connections: [
-      { topicId: "algorithms-vs-data-structures", relationship: "Used to evaluate algorithmic efficiency" },
-      { topicId: "databases", relationship: "Explains why full table scans fail at scale" }
+      { topicId: "Hash Tables", relationship: "The physical embodiment of O(1) lookups.", href: "/data-structures/hash-tables", status: "available" },
+      { topicId: "Binary Search", relationship: "The physical embodiment of O(log n) search.", href: "/algorithms/binary-search", status: "available" },
+      { topicId: "CPU Architecture", relationship: "Why constants still matter in hardware.", href: "/computer-science/foundations/cpu-architecture", status: "available" }
     ],
-    realWorldExamples: [
-      { title: "Database Indexing", description: "Looking up a record without an index is O(N) (Full Table Scan). With a B-Tree index, it becomes O(log N), allowing instant lookup among billions of rows." },
-      { title: "Sorting Feeds", description: "Sorting 1 million tweets with an O(N²) algorithm requires 1 trillion operations. With O(N log N), it requires only ~20 million." }
-    ],
+
+    // 13. Try It Yourself
+    exercises: {
+      understand: { 
+        question: "If an O(n) algorithm processes 1,000 items in 1 ms, roughly how long will it take to process 1,000,000 items?",
+        hint: "O(n) scales linearly. If the input grows by 1000x, the time grows by 1000x."
+      },
+      predict: {
+        scenario: "You have two sorting algorithms: one is O(n²) and the other is O(n log n).",
+        question: "If you only need to sort 10 items, does the Big O complexity matter?"
+      },
+      build: {
+        task: "Write a nested for-loop in your language of choice. Time its execution with 100, 1000, and 10000 items.",
+        requirements: ["Use a performance timer (like performance.now() in JS).", "Observe the non-linear explosion in execution time."]
+      }
+    },
+
+    realWorldExamples: [],
     misconceptions: [
-      { myth: "Big O tells you exactly how fast a program runs.", reality: "It describes growth behavior, not exact execution time. A small O(N²) algorithm might be faster than a complex O(N) algorithm for very small inputs." },
-      { myth: "O(1) means the operation is instantly fast.", reality: "O(1) means the time does not change as N grows. It could still take 5 full seconds every time, which is constant but slow." }
+      { myth: "Big O tells you exactly how fast a program runs.", reality: "It describes growth behavior, not exact execution time. A small O(n²) algorithm might be faster than a complex O(n) algorithm for very small inputs." },
+      { myth: "O(1) means the operation is instantly fast.", reality: "O(1) means the time does not change as n grows. It could still take 5 full seconds every time, which is constant but slow." }
     ],
+
     keyTakeaways: [
-      "Drop constants and non-dominant terms. O(2N + 5) is simply O(N).",
+      "Drop constants and non-dominant terms. O(2n + 5) is simply O(n).",
       "Big O is about understanding scalability limitations before building."
     ],
     prerequisites: ["logic-and-boolean-algebra"],
