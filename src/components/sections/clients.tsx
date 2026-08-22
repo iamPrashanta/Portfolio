@@ -23,7 +23,7 @@ export function Clients() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           {logos.map((logo, idx) => (
             <div key={idx} className="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <Image src={logo} alt="Client Logo" width={160} height={40} style={{ width: "auto", height: "auto" }} className="h-8 md:h-10 w-auto rounded-none" />
+              <Image src={logo} alt="Client Logo" width={160} height={40} style={{ width: "auto" }} className="h-8 md:h-10 w-auto rounded-none" />
             </div>
           ))}
         </div>

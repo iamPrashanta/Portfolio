@@ -4,6 +4,11 @@ import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { careers } from "@/data/careers";
 import { skills } from "@/data/skills";
+import { foundations } from "@/data/computer-science";
+import { dataStructures } from "@/data/data-structures";
+import { algorithms } from "@/data/algorithms";
+import { competitiveProgramming } from "@/data/competitive-programming";
+import { problems } from "@/data/problems";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
@@ -29,6 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const supportingRoutes = [
     { route: "/skills", priority: 0.7 },
     { route: "/insights", priority: 0.7 },
+    { route: "/computer-science", priority: 0.8 },
+    { route: "/data-structures", priority: 0.8 },
+    { route: "/algorithms", priority: 0.8 },
+    { route: "/competitive-programming", priority: 0.8 },
+    { route: "/problems", priority: 0.8 },
   ].map(({ route, priority }) => ({
     url: `${baseUrl}${route}`,
     lastModified: fallbackDate,
@@ -79,6 +89,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // Dynamic Knowledge Pages
+  const foundationRoutes = foundations.map((topic) => ({
+    url: `${baseUrl}/computer-science/foundations/${topic.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const dataStructureRoutes = dataStructures.map((topic) => ({
+    url: `${baseUrl}/data-structures/${topic.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const algorithmRoutes = algorithms.map((topic) => ({
+    url: `${baseUrl}/algorithms/${topic.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const cpRoutes = competitiveProgramming.map((topic) => ({
+    url: `${baseUrl}/competitive-programming/techniques/${topic.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const problemRoutes = problems.map((problem) => ({
+    url: `${baseUrl}/problems/${problem.slug}`,
+    lastModified: fallbackDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     ...coreRoutes,
     ...supportingRoutes,
@@ -87,5 +133,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...projectRoutes,
     ...careerRoutes,
     ...skillRoutes,
+    ...foundationRoutes,
+    ...dataStructureRoutes,
+    ...algorithmRoutes,
+    ...cpRoutes,
+    ...problemRoutes,
   ];
 }

@@ -68,6 +68,15 @@ export const navigation: NavigationEntry[] = [
           { title: "Careers", href: "/careers", description: "Specialist opportunities & collaboration" },
         ],
       },
+      {
+        title: "KNOWLEDGE",
+        items: [
+          { title: "Computer Science", href: "/computer-science", description: "Core concepts & foundations" },
+          { title: "Data Structures & Algorithms", href: "/data-structures", description: "DSA concepts, patterns & implementations" },
+          { title: "Competitive Programming", href: "/competitive-programming", description: "Problem-solving techniques & patterns" },
+          { title: "Problems & Solutions", href: "/problems", description: "Real-world engineering challenges" },
+        ],
+      },
     ],
     featured: {
       title: "Building systems that scale.",
@@ -119,10 +128,9 @@ export const navigation: NavigationEntry[] = [
         ],
       },
       {
-        title: "COMPUTER SCIENCE",
+        title: "EXPERIMENT",
         items: [
-          { title: "DSA", href: "/dsa", description: "Data Structures & Algorithms" },
-          { title: "CP", href: "/cp", description: "Competitive Programming" },
+          { title: "Code Playground", href: "/lab/playground", description: "Write, run & compare code" },
           { title: "Experiments", href: "/lab/experiments", description: "Technical prototypes" },
         ],
       },

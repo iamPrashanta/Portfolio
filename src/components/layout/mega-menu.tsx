@@ -22,7 +22,14 @@ export function MegaMenu({ menu, isOpen }: MegaMenuProps) {
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Columns Area */}
-        <div className={cn("grid gap-8", menu.featured ? "lg:col-span-8" : "lg:col-span-12", "grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit min-[400px]:grid-cols-2")}>
+        <div 
+          className={cn(
+            "grid gap-8", 
+            menu.featured ? "lg:col-span-8" : "lg:col-span-12", 
+            "grid-cols-1 md:grid-cols-2",
+            menu.columns.length === 3 ? "lg:grid-cols-3" : menu.columns.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-2"
+          )}
+        >
           {menu.columns.map((column, idx) => (
             <MegaMenuColumn key={idx} column={column} />
           ))}
